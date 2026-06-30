@@ -1,5 +1,311 @@
 [
   {
+    "id": "d0629",
+    "label": "Jun 29 (일)",
+    "dot": "#e24b4a",
+    "summary": "미 증시 약세·메모리칩 가격 폭등으로 AI 수혜주와 칩메이커 간 수익 이동 심화",
+    "market": [
+      {
+        "label": "S&P 500",
+        "value": "7,354.02",
+        "change": "-1.95%",
+        "up": false
+      },
+      {
+        "label": "NASDAQ",
+        "value": "25,297.62",
+        "change": "-4.60%",
+        "up": false
+      },
+      {
+        "label": "DOW",
+        "value": "51,876.11",
+        "change": "+0.60%",
+        "up": true
+      },
+      {
+        "label": "VIX",
+        "value": "18.41",
+        "change": "+12.26%",
+        "up": false
+      }
+    ],
+    "macroIndicators": [
+      {
+        "label": "미10년 국채금리",
+        "value": "4.372%",
+        "change": "+0.072%p",
+        "up": false,
+        "sub": "성장주 밸류에이션 압박"
+      },
+      {
+        "label": "달러인덱스",
+        "value": "101.37",
+        "change": "+0.51%",
+        "up": true,
+        "sub": "강달러 지속"
+      },
+      {
+        "label": "VIX 공포지수",
+        "value": "18.41",
+        "change": "+2.01",
+        "up": false,
+        "sub": "변동성 상승"
+      },
+      {
+        "label": "WTI 유가",
+        "value": "$69.23",
+        "change": "-$6.62",
+        "up": false,
+        "sub": "지정학적 우려 완화"
+      }
+    ],
+    "koreaMarket": [
+      {
+        "label": "KOSPI",
+        "value": "8,411.21",
+        "change": "-7.08%",
+        "up": false
+      },
+      {
+        "label": "원/달러",
+        "value": "1,385",
+        "change": "약세",
+        "up": false,
+        "sub": "주가 급락과 동반"
+      },
+      {
+        "label": "삼성전자",
+        "value": "n.a.",
+        "change": "메모리칩 가격 폭등",
+        "up": true,
+        "sub": "연초 대비 +166%"
+      }
+    ],
+    "nasdaq": [
+      {
+        "tag": "AI",
+        "tagColor": "blue",
+        "title": "메모리칩 가격 폭등이 AI 수익성 양극화 초래",
+        "meta": "B1면",
+        "summary": "Micron 등 메모리칩 제조사들이 DRAM 가격 60% 이상, NAND 플래시 80% 이상 올리면서 연 4분기에 초과 이윤 획득. 초스케일러(MS, Meta 등)는 칩 비용 급증으로 AI 투자 수익성 악화. 칩 공급 부족으로 가격 급등했지만 장기 공급 증가 시 이익 반감 전망.",
+        "implication": "AI 인프라 투자 수익성 악화 우려 확산으로 NVIDIA 등 AI 반도체 주가 약세. 메모리칩 초과 이윤은 일시적 가능성 높음.",
+        "page": "p. B1 — Markets",
+        "quote": "Micron increased prices for DRAM chips more than 60% on the previous three months"
+      },
+      {
+        "tag": "Tech",
+        "tagColor": "purple",
+        "title": "중국 AI 모델이 미국 모델 성능 추격",
+        "meta": "B1면",
+        "summary": "중국 Zhipu AI의 GLM-5.2가 Anthropic Mythos와 사이버보안 버그 찾기에서 경쟁력 보유. 오픈웨이트 모델이라 누구나 다운로드 가능해 규제 회피. 미국의 AI 칩 수출 규제도 중국 기업들이 상용 칩으로 우회 가능 상황.",
+        "implication": "미국의 AI 기술 우위 약화 가능성. 백악관의 AI 정책 재검토 압박 예상.",
+        "page": "p. B4 — Technology",
+        "quote": "China is making sure that the gap becomes smaller and smaller over time"
+      },
+      {
+        "tag": "Market",
+        "tagColor": "red",
+        "title": "차입금 폭증으로 주식시장 리스크 급증",
+        "meta": "A1-A2면",
+        "summary": "미국 개인투자자들의 마진 차용금이 연초 대비 54% 증가해 사상 최고인 1.4조 달러 기록. 고수익 레버리지 ETF 자산도 2,200억 달러 돌파. 한국에서는 개별 종목 추적 레버리지 펀드로 인한 급락이 시연됨. 현물 자산의 갑작스러운 급락 시 강제 청산 연쇄(화이트 스완) 우려.",
+        "implication": "시장 과열 신호. 변동성 급증 시 개인투자자의 손실 규모 가능성 높음.",
+        "page": "p. A1-A2 — Markets",
+        "quote": "U.S. margin debt rose 54% to a record $1.4 trillion in May from a year earlier"
+      },
+      {
+        "tag": "Autos",
+        "tagColor": "green",
+        "title": "Wayve AI, 전통 자동차사 압박 본격화",
+        "meta": "B1면",
+        "summary": "영국 스타트업 Wayve가 Stellantis, Nissan, Mercedes와 자율주행 AI 납품 계약 확대. Tesla의 엔드-투-엔드 AI 방식과 경쟁. 전통 자동차사는 Waymo 같은 하이브리드 방식 유지하며 보수적 접근.",
+        "implication": "자율주행 기술 경쟁 심화로 진입 비용 상승. 소수 강자 중심 재편 가능.",
+        "page": "p. B1 — Technology",
+        "quote": "Wayve's technology promises hands-free navigation on highways and urban roads"
+      }
+    ],
+    "korea": [
+      {
+        "tag": "정책",
+        "tagColor": "green",
+        "title": "한국 증시 급락, 레버리지 펀드 강제청산 우려",
+        "meta": "A2면",
+        "summary": "KOSPI 7% 급락으로 개별 종목 추적 레버리지 펀드 31% 낙폭 기록. 한국 금융감독당국이 레버리지 단일종목 펀드 출시를 후회한다고 표명. 소매투자자 92%가 해당 상품 보유 중으로 손실 심각.",
+        "implication": "개인투자자 손실 극대화. 금융규제 강화 논의 가능성 높음.",
+        "page": "p. A2 — Markets",
+        "quote": "regretted not blocking the launch of leveraged single-stock funds"
+      },
+      {
+        "tag": "국방",
+        "tagColor": "orange",
+        "title": "미-이란 분쟁 재발화, 호르무즈 해협 교역량 급락",
+        "meta": "A1, A6면",
+        "summary": "미-이란 지난주 호르무즈 해협에서 드론·미사일 교환. 글로벌 유가 5% 상승했다가 휴전 합의로 조정. 향후 도하 정상회담 예정이나 이란의 해협 관할권 주장으로 협상 난항 예상. 전 세계 원유 20%가 이 해협 통과.",
+        "implication": "유가 변동성 재점화 위험. 에너지 인플레 회귀 가능성.",
+        "page": "p. A1, A6 — World News",
+        "quote": "U.S. offered to hold talks with Iran at a summit in the Qatari capital of Doha"
+      },
+      {
+        "tag": "M&A",
+        "tagColor": "blue",
+        "title": "디즈니 신임 CEO, 속도와 수익성 강조",
+        "meta": "B1면",
+        "summary": "Josh D'Amaro 취임 100일째, ESPN·ABC 방송국 유지 결정. 조직 재편으로 마케팅 부서를 통합해 경영 속도 높임. 스트리밍 플랫폼 Disney+를 Netflix 경쟁 모델로 재정의.",
+        "implication": "미디어 대형사 구조조정 가속화. 스트리밍 전쟁 심화 예상.",
+        "page": "p. B1 — Business & Finance",
+        "quote": "D'Amaro wants Disney+ to be something more: an entryway for all of the company's businesses"
+      }
+    ],
+    "risk": {
+      "geoRisks": [
+        {
+          "emoji": "🇮🇷",
+          "label": "미-이란 호르무즈 해협 분쟁 재발화",
+          "level": "high"
+        },
+        {
+          "emoji": "🇨🇳",
+          "label": "중국 AI 기술 추격으로 미국 우위 약화",
+          "level": "mid"
+        },
+        {
+          "emoji": "🇪🇺",
+          "label": "독일 경제 불황, 글로벌 수출 위축",
+          "level": "mid"
+        }
+      ],
+      "bubbleChecks": [
+        {
+          "label": "개인투자자 마진 차용금 1.4조$ 사상 최고 기록",
+          "level": "high",
+          "isNew": true
+        },
+        {
+          "label": "레버리지 ETF 자산 2,200억$ 돌파, 강제청산 연쇄 리스크",
+          "level": "high",
+          "isNew": true
+        },
+        {
+          "label": "메모리칩 가격 60-80% 급등으로 인플레 재점화 우려",
+          "level": "mid",
+          "isNew": false
+        },
+        {
+          "label": "AI 데이터센터 비용 급증으로 초스케일러 수익성 악화",
+          "level": "mid",
+          "isNew": false
+        },
+        {
+          "label": "AI 칩 수요 쏠림으로 반도체 초과이윤 일시적, 공급 증가 시 하락 위험",
+          "level": "mid",
+          "isNew": true
+        }
+      ]
+    },
+    "sectors": [
+      {
+        "name": "반도체·메모리",
+        "value": "+2.6%",
+        "up": true,
+        "barPct": 72
+      },
+      {
+        "name": "AI·클라우드",
+        "value": "-5.4%",
+        "up": false,
+        "barPct": 25
+      },
+      {
+        "name": "에너지",
+        "value": "-8.7% YTD",
+        "up": false,
+        "barPct": 30
+      },
+      {
+        "name": "금융",
+        "value": "-1.5%",
+        "up": false,
+        "barPct": 38
+      },
+      {
+        "name": "헬스케어",
+        "value": "+1.2%",
+        "up": true,
+        "barPct": 55
+      },
+      {
+        "name": "소비재·유틸",
+        "value": "+0.8%",
+        "up": true,
+        "barPct": 52
+      }
+    ],
+    "spotlight": [
+      {
+        "ticker": "NVDA",
+        "desc": "AI 칩 공급 부족 시 수익성 급락 우려",
+        "badge": "-8.6%",
+        "color": "red"
+      },
+      {
+        "ticker": "MSFT",
+        "desc": "메모리칩 비용 급증으로 수익성 악화",
+        "badge": "-1.7%",
+        "color": "red"
+      },
+      {
+        "ticker": "MU",
+        "desc": "메모리칩 가격 폭등으로 분기 실적 극호조",
+        "badge": "+135% YTD",
+        "color": "green"
+      },
+      {
+        "ticker": "TSLA",
+        "desc": "기술주 약세 동반, 거시 불안 영향",
+        "badge": "-9.8%",
+        "color": "red"
+      }
+    ],
+    "macro": [
+      {
+        "date": "6/25",
+        "dateNote": "수",
+        "dot": "#378add",
+        "title": "Greenspan 서거, Fed 역사 장 마감",
+        "sub": "39년 Fed 의장 역임, Warsh 신임 의장 정책 노선 전환 신호",
+        "badgeText": "금리정책",
+        "badgeColor": "blue"
+      },
+      {
+        "date": "6/28-29",
+        "dateNote": "금-토",
+        "dot": "#e24b4a",
+        "title": "미-이란 분쟁 고조, 호르무즈 해협 통행료 분쟁",
+        "sub": "유가 변동성 재점화, 글로벌 유가 5% 상승 후 휴전 합의",
+        "badgeText": "지정학",
+        "badgeColor": "red"
+      },
+      {
+        "date": "6/26",
+        "dateNote": "수",
+        "dot": "#2ecc8a",
+        "title": "한국 KOSPI 급락, 레버리지 펀드 대량 청산",
+        "sub": "개별 종목 추적 상품 일제히 강제청산, 소매투자자 손실 극대화",
+        "badgeText": "금융위기",
+        "badgeColor": "red"
+      },
+      {
+        "date": "6/27",
+        "dateNote": "목",
+        "dot": "#378add",
+        "title": "중국 Zhipu AI, 미국 Anthropic 모델과 경쟁",
+        "sub": "오픈웨이트 모델 공개, 미국 규제 우회 경로 제시",
+        "badgeText": "기술경쟁",
+        "badgeColor": "blue"
+      }
+    ]
+  },
+  {
     "id": "d0623",
     "label": "Jun 23 (Mon)",
     "dot": "#e24b4a",
