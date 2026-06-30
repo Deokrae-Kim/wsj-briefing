@@ -426,47 +426,30 @@ function renderBriefing(d) {
   strip.innerHTML = `<div class="dot" style="background:${d.dot}"></div><div class="summary-text"><strong>${d.label}</strong> — ${d.summary}</div>`;
   mc.appendChild(strip);
 
-  // helper: render a market card, dimming N/A values
+  // helper: render a market card. If no real value from PDF, hide the card entirely.
   function marketCardHtml(m) {
-    const isNA = !m.value || m.value === 'N/A' || m.value === 'n.a.' || m.value === 'n/a';
-    const cls = isNA ? 'neutral' : (m.up === true ? 'up' : m.up === false ? 'down' : 'neutral');
-    const valHtml = isNA ? `<div class="mvalue" style="color:var(--text3);font-size:14px;">정보 없음</div>` : `<div class="mvalue">${m.value}</div>`;
-    const chgHtml = isNA ? '' : `<div class="mchange ${cls}">${m.change||''}</div>`;
-    return `<div class="market-card"><div class="mlabel">${m.label}</div>${valHtml}${chgHtml}${m.sub && !isNA ? `<div class="msub">${m.sub}</div>` : ''}</div>`;
+    const isNA = !m.value || m.value === 'N/A' || m.value === 'n.a.' || m.value === 'n/a' || m.value === '-';
+    if (isNA) return ''; // 근거 없으면 표시 안 함
+    const cls = m.up === true ? 'up' : m.up === false ? 'down' : 'neutral';
+    return `<div class="market-card"><div class="mlabel">${m.label}</div><div class="mvalue">${m.value}</div><div class="mchange ${cls}">${m.change||''}</div>${m.sub ? `<div class="msub">${m.sub}</div>` : ''}</div>`;
   }
 
-  // ── ROW 1: Core US Markets ──
-  const lbl1 = document.createElement('div');
-  lbl1.className = 'market-section-label';
-  lbl1.textContent = '📊 미국 주요 지수';
-  mc.appendChild(lbl1);
-  const row1 = document.createElement('div');
-  row1.className = 'market-row';
-  const coreMarket = (d.market || []).slice(0, 4);
-  coreMarket.forEach(m => { row1.innerHTML += marketCardHtml(m); });
-  mc.appendChild(row1);
+  function renderMarketSection(label, items) {
+    const cardsHtml = (items || []).map(marketCardHtml).filter(h => h).join('');
+    if (!cardsHtml) return; // 전부 근거 없으면 섹션 자체를 숨김
+    const lbl = document.createElement('div');
+    lbl.className = 'market-section-label';
+    lbl.textContent = label;
+    mc.appendChild(lbl);
+    const row = document.createElement('div');
+    row.className = 'market-row row2';
+    row.innerHTML = cardsHtml;
+    mc.appendChild(row);
+  }
 
-  // ── ROW 2: Macro Indicators ──
-  const lbl2 = document.createElement('div');
-  lbl2.className = 'market-section-label';
-  lbl2.textContent = '🌐 거시 지표';
-  mc.appendChild(lbl2);
-  const row2 = document.createElement('div');
-  row2.className = 'market-row row2';
-  const macroMarket = (d.macroIndicators || []);
-  macroMarket.forEach(m => { row2.innerHTML += marketCardHtml(m); });
-  mc.appendChild(row2);
-
-  // ── ROW 3: Korea Markets ──
-  const lbl3 = document.createElement('div');
-  lbl3.className = 'market-section-label';
-  lbl3.textContent = '🇰🇷 한국 시장';
-  mc.appendChild(lbl3);
-  const row3 = document.createElement('div');
-  row3.className = 'market-row row2';
-  const koreaMarket = (d.koreaMarket || []);
-  koreaMarket.forEach(m => { row3.innerHTML += marketCardHtml(m); });
-  mc.appendChild(row3);
+  renderMarketSection('📊 미국 주요 지수', (d.market || []).slice(0, 4));
+  renderMarketSection('🌐 거시 지표', d.macroIndicators);
+  renderMarketSection('🇰🇷 한국 시장', d.koreaMarket);
 
   // Tabs
   const tabDefs = [
