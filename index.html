@@ -271,36 +271,52 @@ const LIVE_SYMBOLS = [
 
 async function fetchLiveTicker() {
   const strip = document.getElementById('liveTicker');
-  // Use Yahoo Finance v8 chart API (public, no key needed)
-  const results = [];
-  // Batch fetch using quote-summary isn't CORS-friendly from browser;
-  // use a CORS-proxy approach via allorigins for the Yahoo quote API
   const syms = LIVE_SYMBOLS.map(s=>s.sym).join('%2C');
-  try {
-    const url = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${syms}&fields=regularMarketPrice,regularMarketChangePercent,regularMarketChange`;
-    const r = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent(url));
-    const wrapper = await r.json();
-    const data = JSON.parse(wrapper.contents);
-    const quotes = data?.quoteResponse?.result || [];
+  const yahooUrl = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${syms}&fields=regularMarketPrice,regularMarketChangePercent,regularMarketChange`;
 
-    strip.innerHTML = '<div class="ticker-item"><span class="live-dot"></span><span style="font-size:10px;color:var(--text3);margin-left:2px;">실시간</span></div>';
-    quotes.forEach(q => {
-      const meta = LIVE_SYMBOLS.find(s => q.symbol.includes(decodeURIComponent(s.sym).replace('%3D','=').replace('%5E','^').replace('%3AF',':F')));
-      const lbl = meta ? meta.label : q.symbol;
-      const pct = q.regularMarketChangePercent;
-      const cls = pct > 0 ? 'up' : pct < 0 ? 'down' : 'neutral';
-      const sign = pct > 0 ? '+' : '';
-      const price = q.regularMarketPrice;
-      const fmt = price >= 1000 ? price.toLocaleString('en',{maximumFractionDigits:2}) : price.toFixed(2);
-      strip.innerHTML += `<div class="ticker-item">
-        <span class="ticker-name">${lbl}</span>
-        <span class="ticker-val">${fmt}</span>
-        <span class="ticker-chg ${cls}">${sign}${pct.toFixed(2)}%</span>
-      </div>`;
-    });
-  } catch(e) {
-    strip.innerHTML = '<div class="ticker-item" style="color:var(--text3);font-size:12px;">실시간 데이터 로드 실패 (네트워크 확인)</div>';
+  // try multiple CORS proxies in order
+  const proxies = [
+    u => 'https://api.allorigins.win/raw?url=' + encodeURIComponent(u),
+    u => 'https://corsproxy.io/?url=' + encodeURIComponent(u),
+    u => 'https://api.allorigins.win/get?url=' + encodeURIComponent(u),
+  ];
+
+  for (const buildProxyUrl of proxies) {
+    try {
+      const r = await fetch(buildProxyUrl(yahooUrl));
+      if (!r.ok) continue;
+      let data;
+      const text = await r.text();
+      try {
+        const parsed = JSON.parse(text);
+        // allorigins /get wraps response in { contents: "..." }
+        data = parsed.contents ? JSON.parse(parsed.contents) : parsed;
+      } catch { continue; }
+
+      const quotes = data?.quoteResponse?.result || [];
+      if (quotes.length === 0) continue;
+
+      strip.innerHTML = '<div class="ticker-item"><span class="live-dot"></span><span style="font-size:10px;color:var(--text3);margin-left:2px;">실시간</span></div>';
+      quotes.forEach(q => {
+        const meta = LIVE_SYMBOLS.find(s => q.symbol.includes(decodeURIComponent(s.sym).replace('%3D','=').replace('%5E','^').replace('%3AF',':F')));
+        const lbl = meta ? meta.label : q.symbol;
+        const pct = q.regularMarketChangePercent;
+        const cls = pct > 0 ? 'up' : pct < 0 ? 'down' : 'neutral';
+        const sign = pct > 0 ? '+' : '';
+        const price = q.regularMarketPrice;
+        const fmt = price >= 1000 ? price.toLocaleString('en',{maximumFractionDigits:2}) : price.toFixed(2);
+        strip.innerHTML += `<div class="ticker-item">
+          <span class="ticker-name">${lbl}</span>
+          <span class="ticker-val">${fmt}</span>
+          <span class="ticker-chg ${cls}">${sign}${pct.toFixed(2)}%</span>
+        </div>`;
+      });
+      return; // success — stop trying other proxies
+    } catch(e) { /* try next proxy */ }
   }
+
+  // all proxies failed
+  strip.innerHTML = '<div class="ticker-item" style="color:var(--text3);font-size:11px;">실시간 시세 일시 로드 실패</div>';
 }
 
 /* ── GITHUB SYNC ── */
@@ -410,6 +426,15 @@ function renderBriefing(d) {
   strip.innerHTML = `<div class="dot" style="background:${d.dot}"></div><div class="summary-text"><strong>${d.label}</strong> — ${d.summary}</div>`;
   mc.appendChild(strip);
 
+  // helper: render a market card, dimming N/A values
+  function marketCardHtml(m) {
+    const isNA = !m.value || m.value === 'N/A' || m.value === 'n.a.' || m.value === 'n/a';
+    const cls = isNA ? 'neutral' : (m.up === true ? 'up' : m.up === false ? 'down' : 'neutral');
+    const valHtml = isNA ? `<div class="mvalue" style="color:var(--text3);font-size:14px;">정보 없음</div>` : `<div class="mvalue">${m.value}</div>`;
+    const chgHtml = isNA ? '' : `<div class="mchange ${cls}">${m.change||''}</div>`;
+    return `<div class="market-card"><div class="mlabel">${m.label}</div>${valHtml}${chgHtml}${m.sub && !isNA ? `<div class="msub">${m.sub}</div>` : ''}</div>`;
+  }
+
   // ── ROW 1: Core US Markets ──
   const lbl1 = document.createElement('div');
   lbl1.className = 'market-section-label';
@@ -418,10 +443,7 @@ function renderBriefing(d) {
   const row1 = document.createElement('div');
   row1.className = 'market-row';
   const coreMarket = (d.market || []).slice(0, 4);
-  coreMarket.forEach(m => {
-    const cls = m.up === true ? 'up' : m.up === false ? 'down' : 'neutral';
-    row1.innerHTML += `<div class="market-card"><div class="mlabel">${m.label}</div><div class="mvalue">${m.value}</div><div class="mchange ${cls}">${m.change}</div>${m.sub ? `<div class="msub">${m.sub}</div>` : ''}</div>`;
-  });
+  coreMarket.forEach(m => { row1.innerHTML += marketCardHtml(m); });
   mc.appendChild(row1);
 
   // ── ROW 2: Macro Indicators ──
@@ -432,10 +454,7 @@ function renderBriefing(d) {
   const row2 = document.createElement('div');
   row2.className = 'market-row row2';
   const macroMarket = (d.macroIndicators || []);
-  macroMarket.forEach(m => {
-    const cls = m.up === true ? 'up' : m.up === false ? 'down' : 'neutral';
-    row2.innerHTML += `<div class="market-card"><div class="mlabel">${m.label}</div><div class="mvalue">${m.value}</div><div class="mchange ${cls}">${m.change}</div>${m.sub ? `<div class="msub">${m.sub}</div>` : ''}</div>`;
-  });
+  macroMarket.forEach(m => { row2.innerHTML += marketCardHtml(m); });
   mc.appendChild(row2);
 
   // ── ROW 3: Korea Markets ──
@@ -446,10 +465,7 @@ function renderBriefing(d) {
   const row3 = document.createElement('div');
   row3.className = 'market-row row2';
   const koreaMarket = (d.koreaMarket || []);
-  koreaMarket.forEach(m => {
-    const cls = m.up === true ? 'up' : m.up === false ? 'down' : 'neutral';
-    row3.innerHTML += `<div class="market-card"><div class="mlabel">${m.label}</div><div class="mvalue">${m.value}</div><div class="mchange ${cls}">${m.change}</div>${m.sub ? `<div class="msub">${m.sub}</div>` : ''}</div>`;
-  });
+  koreaMarket.forEach(m => { row3.innerHTML += marketCardHtml(m); });
   mc.appendChild(row3);
 
   // Tabs
@@ -663,6 +679,13 @@ async function handleFile(file) {
 규칙: nasdaq 4~5개, korea 3~4개, geoRisks 3~5개, bubbleChecks 3~5개, sectors 6개, spotlight 4개, macro 3~4개.
 dot: 하락장=#e24b4a, 상승장=#2ecc8a, 중립=#378add.
 macroIndicators의 미10년금리·VIX는 up:false가 투자자에게 나쁜 방향.
+
+⚠️ 매우 중요 — 숫자 정확성:
+- market, macroIndicators, koreaMarket의 모든 수치(value, change)는 PDF 안에 실제로 적혀 있는 숫자만 사용해줘. 절대 추정하거나 만들어내지 마.
+- PDF에 해당 지표(예: 원/달러 환율, KOSPI, VIX 등) 수치가 명시적으로 없으면 value를 "N/A"로, change를 ""로, up을 null로 설정해줘.
+- 절대 일반적인 시장 지식이나 과거 기억으로 숫자를 채우지 마. PDF에 없으면 N/A.
+- 기사 요약(nasdaq, korea)도 PDF에 실제로 쓰여진 내용만 반영하고, 구체적 수치(가격, %, 금액)는 PDF 원문에 있는 것만 사용해줘.
+
 순수 JSON만 반환.`;
 
   try {
