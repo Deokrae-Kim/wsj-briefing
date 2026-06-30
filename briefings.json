@@ -1,1 +1,314 @@
-[]
+[
+  {
+    "id": "d0623",
+    "label": "Jun 23 (Mon)",
+    "dot": "#e24b4a",
+    "summary": "스페이스X 16% 급락으로 기술주 약세, 이란 핵협상 진전 속 중동 긴장 완화",
+    "market": [
+      {
+        "label": "NASDAQ",
+        "value": "26166.60",
+        "change": "-1.3%",
+        "up": false
+      },
+      {
+        "label": "S&P 500",
+        "value": "7472.79",
+        "change": "-0.4%",
+        "up": false
+      },
+      {
+        "label": "DOW",
+        "value": "51712.71",
+        "change": "+0.3%",
+        "up": true
+      },
+      {
+        "label": "TQQQ",
+        "value": "82.58",
+        "change": "-0.4%",
+        "up": false
+      }
+    ],
+    "macroIndicators": [
+      {
+        "label": "달러인덱스(DXY)",
+        "value": "97.21",
+        "change": "+0.2%",
+        "up": true,
+        "sub": "강달러 유지 → 신흥국 압박"
+      },
+      {
+        "label": "미10년 국채금리",
+        "value": "4.507%",
+        "change": "+0.07%p",
+        "up": false,
+        "sub": "채권 강세, 성장주 약세"
+      },
+      {
+        "label": "VIX 공포지수",
+        "value": "17.28",
+        "change": "+0.88",
+        "up": false,
+        "sub": "변동성 상승 신호"
+      },
+      {
+        "label": "WTI 유가",
+        "value": "$74.82",
+        "change": "-2.3%",
+        "up": false,
+        "sub": "이란 핵협상 진전으로 하락"
+      }
+    ],
+    "koreaMarket": [
+      {
+        "label": "KOSPI",
+        "value": "2615",
+        "change": "-0.2%",
+        "up": false
+      },
+      {
+        "label": "KOSDAQ",
+        "value": "820",
+        "change": "-0.5%",
+        "up": false
+      },
+      {
+        "label": "원/달러",
+        "value": "1285",
+        "change": "-15원",
+        "up": true,
+        "sub": "원화 강세 지속"
+      },
+      {
+        "label": "외국인 순매수",
+        "value": "-1,200억",
+        "change": "기술주 매도",
+        "up": false
+      }
+    ],
+    "nasdaq": [
+      {
+        "tag": "AI/Tech",
+        "tagColor": "red",
+        "title": "SpaceX Shares Tumble 16% After IPO Debut",
+        "meta": "B1 - Markets",
+        "summary": "SpaceX shares fell 16% to $154.60, below first-day closing price of $200.40. Company faces $20B+ bond issuance as tech IPO sentiment deteriorates. Alphabet fell 5%, Oracle down 5% as Nasdaq composite declined 1.3%.",
+        "implication": "IPO 광풍 꺾이는 신호. 고성장주 밸류에이션 조정 가속화 우려. 신규 상장 회피 심화 가능성",
+        "page": "p. B9 — Markets",
+        "quote": "In today's market, companies are being punished for being capital raisers."
+      },
+      {
+        "tag": "M&A",
+        "tagColor": "blue",
+        "title": "AbbVie to Buy Apogee Therapeutics for $10.9B",
+        "meta": "B3 - Business News",
+        "summary": "AbbVie agreed to acquire Apogee Therapeutics for $135.11/share, 49% premium. Deal aims to bolster immunology franchise with zumilokibart candidate. AbbVie shares up 6.3%, Apogee up 47%.",
+        "implication": "제약사 파이프라인 강화 움직임. 면역질환 경쟁 심화. 높은 프리미엄은 인수 시장 뜨거움 반영",
+        "page": "p. B3 — Business News",
+        "quote": "AbbVie on Monday said it would pay $135.11 a share in cash, a 49% premium."
+      },
+      {
+        "tag": "Energy",
+        "tagColor": "green",
+        "title": "Chevron Strikes 20-Year Power Deal with Microsoft",
+        "meta": "B1 - Markets",
+        "summary": "Chevron agreed to sell electricity to Microsoft for 20 years via Project Kilby in West Texas. Deal supplies 2.7-gigawatt AI data center using Permian natural gas. Companies plan final decision later in 2026.",
+        "implication": "AI 데이터센터 전력 수급 다툼 심화. 에너지 회사의 수익 다각화. 텍사스 경제 영향력 확대",
+        "page": "p. B1 — Markets",
+        "quote": "Chevron has struck a 20-year agreement to sell electricity to Microsoft."
+      },
+      {
+        "tag": "Retail",
+        "tagColor": "orange",
+        "title": "Domino's Pizza Names New CEO as Sales Struggle",
+        "meta": "B3 - Business News",
+        "summary": "Joe Jordan will become Domino's CEO effective October 1, replacing Russell Weiner. Company struggling with sales after disappointing Q1 results. Stock down 30% YTD, Berkshire sold position in May.",
+        "implication": "경영진 교체로 구조 조정 신호. 피자 업계 부진 심화. 소비 약세 가시화",
+        "page": "p. B3 — Business News",
+        "quote": "Jordan said in an interview that he intended to closely focus on Domino's operations."
+      },
+      {
+        "tag": "Tech/AI",
+        "tagColor": "purple",
+        "title": "Microsoft CEO Intensifies Critique of AI Giants",
+        "meta": "B1 - Markets",
+        "summary": "Satya Nadella urges shift away from frontier AI model dominance toward cheaper alternatives and user control. Microsoft considering hosting DeepSeek model. Challenges OpenAI/Anthropic duopoly narrative on safety and job losses.",
+        "implication": "AI 패권 재편 신호. 저가 AI 모델 경쟁 가열. 오픈AI 헤게모니 위협",
+        "page": "p. B1 — Markets",
+        "quote": "You can't say, hey, all white-collar jobs are gone and this could even be a weapon."
+      }
+    ],
+    "korea": [
+      {
+        "tag": "정책",
+        "tagColor": "green",
+        "title": "이란 핵협상 진전, 달러 결제 허용",
+        "meta": "A6면·중동 긴장 완화",
+        "summary": "미국이 이란의 석유 달러 결제를 2개월간 허가. 비핵화 검사관 복귀 합의. 유가는 $74.82로 1.78달러 하락. 이란 제재 완화로 에너지 공급 리스크 감소.",
+        "implication": "중동 긴신 일시적 완화. 유가 하락으로 인플레 둔화. 글로벌 성장주 밸류에이션 조정 가능",
+        "page": "p. A6 — World News",
+        "quote": "The U.S. cleared the way for Iran to sell oil in dollars, including to U.S. buyers."
+      },
+      {
+        "tag": "정치",
+        "tagColor": "blue",
+        "title": "영국 총리 스타머 사임, 6년간 6번째 총리 교체",
+        "meta": "A9면·정치 혼란",
+        "summary": "케이르 스타머 영국 총리가 노동당 반란 속 사임. 앤디 번험이 차기 총리 예정. 7년간 6명의 총리 교체로 영국 정치 불안정 가속. 브렉시트 이후 정당 파괴 심화.",
+        "implication": "선진국 정치 불안정성 증가. 정책 일관성 약화 우려. 영국 경제 리스크 상승",
+        "page": "p. A9 — World News",
+        "quote": "Burnham is setto become the country's sixth prime minister in just seven years."
+      },
+      {
+        "tag": "Fed",
+        "tagColor": "orange",
+        "title": "Alan Greenspan 전 FRB 의장 별세, 향후 정책 방향 재점검",
+        "meta": "A4면·경제사",
+        "summary": "앨런 그린스팬 전 연방준비제도 의장이 100세로 별세. 1987~2006년 18.5년 재임. 규제 완화 정책의 선구자였으나 2008년 금융위기 이후 평가 급락. 현 FRB 리더십의 정책 방향성 상징.",
+        "implication": "금융규제 완화의 부작용 재평가. 현 Fed의 긴축 기조 정당성 강화. 규제 강화 정책 심화 가능",
+        "page": "p. A4 — U.S. News",
+        "quote": "His view that markets could effectively police themselves became a driving force of regulatory policy."
+      }
+    ],
+    "risk": {
+      "geoRisks": [
+        {
+          "emoji": "🇮🇷",
+          "label": "이란 핵협상 진전에도 재협상 리스크 상존. 미국 대선 후 정책 변화 가능성",
+          "level": "mid"
+        },
+        {
+          "emoji": "🇬🇧",
+          "label": "영국 정치 불안정. 6년간 6번째 총리 교체로 정책 공백 우려",
+          "level": "mid"
+        },
+        {
+          "emoji": "🇮🇱",
+          "label": "중동 긴장 완화되었으나 이스라엘-헤즈볼라 충돌 위험 여전",
+          "level": "high"
+        },
+        {
+          "emoji": "🇨🇳",
+          "label": "중국의 미국 기업 제재 확대. 반도체·희토류 제재 가능성",
+          "level": "mid"
+        }
+      ],
+      "bubbleChecks": [
+        {
+          "label": "IPO 광풍 꺾임. SpaceX 16% 급락, 신규 상장 회피 심화",
+          "level": "high",
+          "isNew": true
+        },
+        {
+          "label": "AI 대형주 약세. Alphabet -5%, Nvidia -2% 등 기술주 조정 가속",
+          "level": "high",
+          "isNew": false
+        },
+        {
+          "label": "사모펀드(Private Equity) M&A 활발. AbbVie-Apogee 등 고평가 인수 지속",
+          "level": "mid",
+          "isNew": false
+        },
+        {
+          "label": "스페이스X 기술주 연쇄 약세 유발. 성장주 밸류에이션 조정 신호",
+          "level": "high",
+          "isNew": true
+        }
+      ]
+    },
+    "sectors": [
+      {
+        "name": "반도체·AI",
+        "value": "-1.2%",
+        "up": false,
+        "barPct": 32
+      },
+      {
+        "name": "에너지",
+        "value": "-2.3%",
+        "up": false,
+        "barPct": 15
+      },
+      {
+        "name": "금융",
+        "value": "+1.4%",
+        "up": true,
+        "barPct": 68
+      },
+      {
+        "name": "헬스케어",
+        "value": "+0.7%",
+        "up": true,
+        "barPct": 55
+      },
+      {
+        "name": "소비재",
+        "value": "-0.8%",
+        "up": false,
+        "barPct": 38
+      },
+      {
+        "name": "유틸리티",
+        "value": "+0.6%",
+        "up": true,
+        "barPct": 52
+      }
+    ],
+    "spotlight": [
+      {
+        "ticker": "SPCX",
+        "desc": "IPO 후 첫 거래일 대비 23% 하락. $154.60 마감. $20B 채권 발행 계획 중",
+        "badge": "-16%",
+        "color": "red"
+      },
+      {
+        "ticker": "GOOGL",
+        "desc": "AI 연구원 2명 퇴사 발표 후 최악의 낙폭. 기술주 약세 주도",
+        "badge": "-5%",
+        "color": "red"
+      },
+      {
+        "ticker": "ABBV",
+        "desc": "Apogee Therapeutics 인수로 면역질환 포트폴리오 강화. 프리미엄 49%",
+        "badge": "+6.3%",
+        "color": "green"
+      },
+      {
+        "ticker": "CVX",
+        "description": "마이크로소프트와 20년 전력 판매 계약. AI 데이터센터 확산의 수혜",
+        "badge": "+1.4%",
+        "color": "green"
+      }
+    ],
+    "macro": [
+      {
+        "date": "6/25",
+        "dateNote": "수",
+        "dot": "#378add",
+        "title": "연방준비제도 FOMC 의사록 공개",
+        "sub": "금리 인하 논의 여부 확인. 경제 둔화 신호 재점검",
+        "badgeText": "금리 정책",
+        "badgeColor": "blue"
+      },
+      {
+        "date": "6/24",
+        "dateNote": "화",
+        "dot": "#e24b4a",
+        "title": "중국 AI 정책 발표 (Implementation Opinions)",
+        "sub": "17개 조항의 AI+소비 전략. 휴머노이드 로봇·뇌-컴퓨터 인터페이스 개발 강조",
+        "badgeText": "중국 정책",
+        "badgeColor": "orange"
+      },
+      {
+        "date": "6/23",
+        "dateNote": "월",
+        "dot": "#e24b4a",
+        "title": "이란 핵협상 진전, 제재 일부 해제",
+        "sub": "달러 결제 허용 2개월, 유가 $74.82로 1.78달러 하락. 비핵화 검사 복귀 합의",
+        "badgeText": "지정학위험",
+        "badgeColor": "red"
+      }
+    ]
+  }
+]
