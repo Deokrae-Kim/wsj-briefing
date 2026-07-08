@@ -391,21 +391,27 @@ async function saveToGitHub(allData) {
     return true;
   } catch(e) {
     console.error('GitHub save error', e);
-    setStatus(`⚠️ GitHub 저장 실패: ${e.message} (로컬에는 표시됨)`, false, true);
+    setStatus(`⚠️ 저장 실패 (분석 결과는 화면에 표시됨, 새로고침 시 사라짐)`, false, true);
+    setTimeout(() => setStatus('', false), 5000);
     return false;
   }
 }
 
 /* ── INIT ── */
 async function init() {
-  setStatus('GitHub에서 브리핑 불러오는 중...', true);
+  setStatus('브리핑 불러오는 중...', true);
   const remoteData = await loadFromGitHub();
   BRIEFING_DATA.length = 0;
   BRIEFING_DATA.push(...remoteData);
 
   BRIEFING_DATA.forEach(d => addToSidebar(d));
-  if (BRIEFING_DATA.length > 0) switchDate(BRIEFING_DATA[0].id);
-  setStatus('', false);
+  if (BRIEFING_DATA.length > 0) {
+    switchDate(BRIEFING_DATA[0].id);
+    setStatus('', false);
+  } else {
+    // 불러오기 실패해도 조용히 — PDF 업로드하면 됨
+    setStatus('', false);
+  }
 
   fetchLiveTicker();
   setInterval(fetchLiveTicker, 60000);
