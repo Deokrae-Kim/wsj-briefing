@@ -1,5 +1,315 @@
 [
   {
+    "id": "d0703",
+    "label": "Jul 3 (Fri)",
+    "dot": "#e24b4a",
+    "summary": "6월 고용 부진으로 AI·기술주 하락, 헬스케어·경기민감주 반등 — 연준 금리인상 가능성 축소",
+    "market": [
+      {
+        "label": "NASDAQ",
+        "value": "25832.67",
+        "change": "-0.8%",
+        "up": false
+      },
+      {
+        "label": "S&P 500",
+        "value": "7483.24",
+        "change": "0.0001%",
+        "up": true
+      },
+      {
+        "label": "DOW",
+        "value": "52900.07",
+        "change": "+1.14%",
+        "up": true
+      },
+      {
+        "label": "10-YR TREAS",
+        "value": "4.477%",
+        "change": "-1/32",
+        "up": false
+      }
+    ],
+    "macroIndicators": [
+      {
+        "label": "실업률",
+        "value": "4.2%",
+        "change": "↓ 4.3% (5월)",
+        "up": false,
+        "sub": "노동력 이탈로 하락"
+      },
+      {
+        "label": "6월 고용증가",
+        "value": "57,000",
+        "change": "vs. 예상 115,000",
+        "up": false,
+        "sub": "예상의 절반 수준 부진"
+      },
+      {
+        "label": "노동력참가율",
+        "value": "61.5%",
+        "change": "2021년 3월 이후 최저",
+        "up": false,
+        "sub": "인력 이탈 가속화"
+      },
+      {
+        "label": "7월 금리인상 확률",
+        "value": "~20%",
+        "change": "vs. 기존 ~33%",
+        "up": false,
+        "sub": "약화된 고용이 인상 억제"
+      }
+    ],
+    "koreaMarket": [
+      {
+        "label": "KOSPI",
+        "value": "N/A",
+        "change": "",
+        "up": null,
+        "sub": ""
+      },
+      {
+        "label": "KOSDAQ",
+        "value": "N/A",
+        "change": "",
+        "up": null,
+        "sub": ""
+      },
+      {
+        "label": "원/달러",
+        "value": "N/A",
+        "change": "",
+        "up": null,
+        "sub": ""
+      },
+      {
+        "label": "외국인 매매",
+        "value": "N/A",
+        "change": "",
+        "up": null,
+        "sub": ""
+      }
+    ],
+    "nasdaq": [
+      {
+        "tag": "고용",
+        "tagColor": "red",
+        "title": "6월 일자리 증가 57,000개, 예상의 절반 수준",
+        "meta": "A1면 · 경기 약화 신호",
+        "summary": "U.S. employers added only 57,000 jobs in June, well below the 115,000 expected. This marked a significant slowdown from spring hiring momentum. The unemployment rate ticked down unexpectedly to 4.2% as more people left the labor force entirely.",
+        "implication": "약한 고용 데이터는 연준 금리인상 가능성을 크게 낮췄다. 시장은 7월 인상 확률을 33%에서 20%로 하향 조정. 기술·AI주 부진의 주요 원인.",
+        "page": "p. A1 — U.S. News",
+        "quote": "The nation's employers added 57,000 new jobs last month, the Labor Department said Thursday, missing economists' expectations for a gain of 115,000 jobs."
+      },
+      {
+        "tag": "금융시장",
+        "tagColor": "blue",
+        "title": "약한 일자리 데이터로 '회전 거래' 부활",
+        "meta": "B9면 · 섹터 순환",
+        "summary": "Weak jobs data sparked rotation from AI giants and tech stocks into healthcare, consumer staples, and other laggard sectors. Dow hit record +1.1%, S&P 500 flat, Nasdaq fell 0.8%. Investors repositioned ahead of potential Fed pause on rate hikes.",
+        "implication": "AI 거품 우려와 금리 정점론이 동시에 영향. 성장주에서 경기민감주·방어주로의 자본 이동 재개. 연준 금리 경로 재평가 필수.",
+        "page": "p. B9 — Markets & Finance",
+        "quote": "Weak jobs data sparked a new round of what investors call the rotation trade: driving down shares of the artificial-intelligence giants that fueled the rebound from wartime lows."
+      },
+      {
+        "tag": "기술",
+        "tagColor": "red",
+        "title": "구글, EU의 46.9억 달러 안드로이드 벌금 상소 패소",
+        "meta": "B1면 · 규제 리스크",
+        "summary": "Alphabet's Google lost its appeal to overturn a €4.12 billion EU fine over Android device manufacturer requirements. The Court of Justice upheld the original ruling on antitrust violations.",
+        "implication": "테크 대형사 규제 강화 기조 확인. 구글의 생태계 통제 능력 제약 심화. 실적 압박 요소 가중.",
+        "page": "p. B1 — Business News",
+        "quote": "Alphabet's Google lost a lengthy battle to overturn a fine of €4.12 billion imposed by the European Union over requirements for device manufacturers deploying the tech giant's Android operating system."
+      },
+      {
+        "tag": "자동차",
+        "tagColor": "green",
+        "title": "테슬라 2분기 판매 25% 점프, 모멘텀 회복",
+        "meta": "B1면 · 긍정 신호",
+        "summary": "Tesla reported Q2 EV global sales jumped nearly 25% year-over-year to 480,126 units, bouncing back from prior weakness. The company also reported 41% growth in energy business deployments.",
+        "implication": "판매 모멘텀 회복이 주가 상승 지지. 하지만 전체 EV 시장은 -25% 부진 중이므로 상대적 강세. 에너지 사업 고성장도 긍정.",
+        "page": "p. B1 — Business News",
+        "quote": "After months of slowing car sales and hits to its brand, Tesla said its sales jumped nearly 25% in the second quarter."
+      },
+      {
+        "tag": "암호화폐",
+        "tagColor": "red",
+        "title": "트럼프 암호화폐 벤처에서 14억 달러 수익, 투자자들은 손실",
+        "meta": "A1면 · 시장 경고",
+        "summary": "President Trump earned approximately $1.4 billion from crypto ventures last year, including $800 million from World Liberty Financial tokens alone. Meanwhile, retail investors who bought those tokens at peak prices suffered massive losses as values crashed.",
+        "implication": "암호화폐 시장의 심각한 정보 비대칭성 노출. 정부 인물의 자산 발행으로 인한 이해 충돌. 소매 투자자 손실 심각.",
+        "page": "p. A1 — What's News",
+        "quote": "The president raked in cash by issuing new assets—World Liberty tokens and memecoins. But those who bought them at high prices had to suffer as their value went belly up."
+      }
+    ],
+    "korea": [
+      {
+        "tag": "국제",
+        "tagColor": "blue",
+        "title": "베네수엘라 야권 지도자 마차도, 귀국 비행 중단",
+        "meta": "A1면 · 지정학 리스크",
+        "summary": "María Corina Machado, Venezuelan opposition leader, was stopped from returning to Venezuela as her private jet was diverted mid-flight over North Carolina. U.S. officials believed she planned to re-enter by boat from Curaçao.",
+        "implication": "미국-베네수엘라 정치 갈등 고조. 야권 진압 강화 신호. 라틴아메리카 정세 불안정.",
+        "page": "p. A9 — World News",
+        "quote": "A private jet took off from Virginia last Friday to carry her to the Caribbean island of Curaçao, where the Venezuelan opposition leader planned to launch a trip back to her country for the first time since she fled in December."
+      },
+      {
+        "tag": "규제",
+        "tagColor": "red",
+        "title": "바티칸, 전통주의 사제 단체와 정식 분열 선언",
+        "meta": "A9면 · 종교 갈등",
+        "summary": "The Vatican formally declared schism with the Society of St. Pius X, excommunicating its bishops and priests after they consecrated bishops without papal consent, widening the rift over modernization of Catholic Church practices.",
+        "implication": "교리 해석 갈등의 심화. 종교 조직 내 분열 가속화. 전통 vs 개혁 논쟁 심화.",
+        "page": "p. A9 — World News",
+        "quote": "The Vatican declared a formal schism with the Society of St. Pius X, excommunicating its bishops and priests in a crackdown on a traditionalist group that has vexed the Holy See for decades."
+      },
+      {
+        "tag": "패션",
+        "tagColor": "blue",
+        "title": "샤넬, 고급 셔츠 제조사 샤르베 인수",
+        "meta": "B3면 · M&A",
+        "summary": "Luxury fashion house Chanel is acquiring high-end shirtmaker Charvet to expand beyond handbags into broader apparel offerings. This represents a rare acquisition move for the heritage brand.",
+        "implication": "명품 산업의 수직 통합 전략. 포트폴리오 다각화를 통한 시장 지배력 강화. 고급 의류 부문 성장 기대.",
+        "page": "p. B3 — Business News",
+        "quote": "Chanel said it was buying shirtmaker Charvet, a rare acquisition for the high-end fashion house as it looks to further widen its offer beyond its luxury handbags."
+      }
+    ],
+    "risk": {
+      "geoRisks": [
+        {
+          "emoji": "🇮🇷",
+          "label": "호르무즈 해협 통행료 분쟁 — 미국-이란 협상 중단 우려",
+          "level": "high"
+        },
+        {
+          "emoji": "🇷🇺",
+          "label": "러시아 키예프 대규모 공습 — 우크라이나 전선 긴장 고조",
+          "level": "high"
+        },
+        {
+          "emoji": "🇻🇪",
+          "label": "베네수엘라 야권 진압 — 마차도 귀국 차단으로 정세 악화",
+          "level": "mid"
+        }
+      ],
+      "bubbleChecks": [
+        {
+          "label": "AI 주식 밸류에이션 과열 — 약한 고용으로 성장 전망 흔들림",
+          "level": "high",
+          "isNew": true
+        },
+        {
+          "label": "암호화폐 시장 정보 비대칭 — 정부 인물의 이해 충돌 노출",
+          "level": "high",
+          "isNew": true
+        },
+        {
+          "label": "금리 인상 가능성 급락 — 연준 정책 경로 재평가 필수",
+          "level": "mid",
+          "isNew": false
+        },
+        {
+          "label": "프라이빗 크레딧 펀드 환매 가속 — Blue Owl 펀드 출금 48억 달러 수준",
+          "level": "mid",
+          "isNew": false
+        }
+      ]
+    },
+    "sectors": [
+      {
+        "name": "기술·AI",
+        "value": "-0.8%",
+        "up": false,
+        "barPct": 25
+      },
+      {
+        "name": "헬스케어",
+        "value": "+1.5%",
+        "up": true,
+        "barPct": 72
+      },
+      {
+        "name": "금융",
+        "value": "+0.8%",
+        "up": true,
+        "barPct": 62
+      },
+      {
+        "name": "에너지",
+        "value": "+0.2%",
+        "up": true,
+        "barPct": 52
+      },
+      {
+        "name": "소비재",
+        "value": "+0.6%",
+        "up": true,
+        "barPct": 58
+      },
+      {
+        "name": "산업재",
+        "value": "+0.4%",
+        "up": true,
+        "barPct": 55
+      }
+    ],
+    "spotlight": [
+      {
+        "ticker": "NVDA",
+        "desc": "약한 고용 데이터로 AI 수요 부진 우려 가중",
+        "badge": "-2.75%",
+        "color": "red"
+      },
+      {
+        "ticker": "UNH",
+        "desc": "헬스케어 회전 거래 수혜 — 센티널 성장 기대",
+        "badge": "+1.2%",
+        "color": "green"
+      },
+      {
+        "ticker": "TSLA",
+        "desc": "2분기 판매 25% 성장으로 반등, 모멘텀 복구",
+        "badge": "+2.1%",
+        "color": "green"
+      },
+      {
+        "ticker": "GOOGL",
+        "desc": "EU 벌금 상소 패소로 규제 리스크 심화",
+        "badge": "-1.8%",
+        "color": "red"
+      }
+    ],
+    "macro": [
+      {
+        "date": "6/27",
+        "dateNote": "목",
+        "dot": "#e24b4a",
+        "title": "6월 비농업 고용 57K (예상 115K) — 시장 쇼크",
+        "sub": "연준 금리인상 가능성 33%→20%로 급락",
+        "badgeText": "약세",
+        "badgeColor": "red"
+      },
+      {
+        "date": "7/01",
+        "dateNote": "화",
+        "dot": "#378add",
+        "title": "Medicare 비만치료약(GLP-1) 저가 커버 시작 — $50 공동부담",
+        "sub": "노바 노디스크, 일라이 릴리 추가 성장 경로 열림",
+        "badgeText": "호재",
+        "badgeColor": "green"
+      },
+      {
+        "date": "7/02",
+        "dateNote": "수",
+        "dot": "#e24b4a",
+        "title": "Blue Owl 프라이빗 크레딧 펀드 환매 48억 달러 — 유동성 압박",
+        "sub": "소매 출금 가속화로 자산관리사 실적 악화 우려",
+        "badgeText": "리스크",
+        "badgeColor": "red"
+      }
+    ]
+  },
+  {
     "id": "d0701",
     "label": "Jul 1 (Wed)",
     "dot": "#2ecc8a",
