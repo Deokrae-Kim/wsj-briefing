@@ -404,6 +404,12 @@ async function init() {
   BRIEFING_DATA.length = 0;
   BRIEFING_DATA.push(...remoteData);
 
+  // 날짜 내림차순 정렬 (최신이 위)
+  BRIEFING_DATA.sort((a, b) => {
+    const idA = a.id.replace(/[^0-9]/g, '').slice(0, 8);
+    const idB = b.id.replace(/[^0-9]/g, '').slice(0, 8);
+    return idB.localeCompare(idA);
+  });
   BRIEFING_DATA.forEach(d => addToSidebar(d));
   if (BRIEFING_DATA.length > 0) {
     switchDate(BRIEFING_DATA[0].id);
@@ -749,7 +755,16 @@ macroIndicators의 미10년금리·VIX는 up:false가 투자자에게 나쁜 방
     if (BRIEFING_DATA.find(x => x.id === parsed.id)) parsed.id = parsed.id + '_' + Date.now();
 
     BRIEFING_DATA.unshift(parsed);
-    addToSidebar(parsed, true);
+    // 날짜 내림차순 재정렬
+    BRIEFING_DATA.sort((a, b) => {
+      const idA = a.id.replace(/[^0-9]/g, '').slice(0, 8);
+      const idB = b.id.replace(/[^0-9]/g, '').slice(0, 8);
+      return idB.localeCompare(idA);
+    });
+    // 사이드바 전체 다시 그리기
+    const inner = document.getElementById('sidebarInner');
+    inner.querySelectorAll('.sidebar-item').forEach(el => el.remove());
+    BRIEFING_DATA.forEach(d => addToSidebar(d));
     switchDate(parsed.id);
 
     if (isLast) {
