@@ -496,16 +496,28 @@ function renderBriefing(d) {
   mc.appendChild(strip);
 
   // helper: render a market card. If no real value from PDF, hide the card entirely.
+  // 고정 슬롯 정의 — 항상 같은 자리, 없으면 빈칸
+  const FIXED_SLOTS = {
+    market:          ['NASDAQ','S&P 500','DOW','TQQQ'],
+    macroIndicators: ['달러인덱스(DXY)','미10년 국채금리','VIX 공포지수','WTI 유가'],
+    koreaMarket:     ['KOSPI','KOSDAQ','원/달러','외국인 순매수'],
+  };
+
   function marketCardHtml(m) {
+    if (!m) return ''; // 슬롯에 없으면 완전히 숨김
     const isNA = !m.value || m.value === 'N/A' || m.value === 'n.a.' || m.value === 'n/a' || m.value === '-';
-    if (isNA) return ''; // 근거 없으면 표시 안 함
+    if (isNA) return ''; // 값 없으면 완전히 숨김
     const cls = m.up === true ? 'up' : m.up === false ? 'down' : 'neutral';
     return `<div class="market-card"><div class="mlabel">${m.label}</div><div class="mvalue">${m.value}</div><div class="mchange ${cls}">${m.change||''}</div>${m.sub ? `<div class="msub">${m.sub}</div>` : ''}</div>`;
   }
 
-  function renderMarketSection(label, items) {
-    const cardsHtml = (items || []).map(marketCardHtml).filter(h => h).join('');
-    if (!cardsHtml) return; // 전부 근거 없으면 섹션 자체를 숨김
+  function renderFixedSection(label, items, slotLabels) {
+    // 고정 슬롯 순서대로만 — PDF에서 못 찾거나 값 없으면 숨김
+    const cardsHtml = slotLabels.map(slotLabel => {
+      const found = (items||[]).find(m => m.label && m.label.includes(slotLabel.split('(')[0].trim()));
+      return marketCardHtml(found || null);
+    }).join('');
+    if (!cardsHtml) return; // 모두 없으면 섹션 자체 숨김
     const lbl = document.createElement('div');
     lbl.className = 'market-section-label';
     lbl.textContent = label;
@@ -516,9 +528,9 @@ function renderBriefing(d) {
     mc.appendChild(row);
   }
 
-  renderMarketSection('📊 미국 주요 지수', (d.market || []).slice(0, 4));
-  renderMarketSection('🌐 거시 지표', d.macroIndicators);
-  renderMarketSection('🇰🇷 한국 시장', d.koreaMarket);
+  renderFixedSection('📊 미국 주요 지수', d.market, FIXED_SLOTS.market);
+  renderFixedSection('🌐 거시 지표', d.macroIndicators, FIXED_SLOTS.macroIndicators);
+  renderFixedSection('🇰🇷 한국 시장', d.koreaMarket, FIXED_SLOTS.koreaMarket);
 
   // Tabs
   const tabDefs = [
@@ -741,9 +753,12 @@ macroIndicators의 미10년금리·VIX는 up:false가 투자자에게 나쁜 방
 
 ⚠️ 매우 중요 — 숫자 정확성:
 - market, macroIndicators, koreaMarket의 모든 수치(value, change)는 PDF 안에 실제로 적혀 있는 숫자만 사용해줘. 절대 추정하거나 만들어내지 마.
-- PDF에 해당 지표(예: 원/달러 환율, KOSPI, VIX 등) 수치가 명시적으로 없으면 value를 "N/A"로, change를 ""로, up을 null로 설정해줘.
+- PDF에 해당 지표 수치가 명시적으로 없으면 value를 "N/A"로, change를 ""로, up을 null로 설정해줘.
 - 절대 일반적인 시장 지식이나 과거 기억으로 숫자를 채우지 마. PDF에 없으면 N/A.
 - 기사 요약(nasdaq, korea)도 PDF에 실제로 쓰여진 내용만 반영하고, 구체적 수치(가격, %, 금액)는 PDF 원문에 있는 것만 사용해줘.
+- market 배열은 반드시 label이 "NASDAQ", "S&P 500", "DOW", "TQQQ" 4개만. 다른 지수(NIKKEI 등) 추가 금지.
+- macroIndicators 배열은 반드시 label이 "달러인덱스(DXY)", "미10년 국채금리", "VIX 공포지수", "WTI 유가" 4개만. 다른 지표(금, 은 등) 추가 금지.
+- koreaMarket 배열은 반드시 label이 "KOSPI", "KOSDAQ", "원/달러", "외국인 순매수" 4개만. 다른 지표 추가 금지.
 
 순수 JSON만 반환.`;
 
