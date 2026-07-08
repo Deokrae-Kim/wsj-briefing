@@ -1,5 +1,320 @@
 [
   {
+    "id": "d0707",
+    "label": "Jul 7 (화)",
+    "dot": "#2ecc8a",
+    "summary": "삼성 2분기 영업이익 19배 급증, SK하이닉스 미국 상장 추진으로 AI 칩 수급 긴장 완화",
+    "market": [
+      {
+        "label": "NASDAQ",
+        "value": "26121.16",
+        "change": "+1.12%",
+        "up": true
+      },
+      {
+        "label": "S&P 500",
+        "value": "7537.43",
+        "change": "+0.72%",
+        "up": true
+      },
+      {
+        "label": "DOW",
+        "value": "53055.91",
+        "change": "+0.29%",
+        "up": true
+      },
+      {
+        "label": "NIKKEI",
+        "value": "68848.59",
+        "change": "-1.27%",
+        "up": false
+      }
+    ],
+    "macroIndicators": [
+      {
+        "label": "미10년 국채금리",
+        "value": "4.479%",
+        "change": "+0.002%p",
+        "up": true,
+        "sub": "금리 상승 압박"
+      },
+      {
+        "label": "VIX 공포지수",
+        "value": "15.57",
+        "change": "-3.59",
+        "up": true,
+        "sub": "시장 낙관 심화"
+      },
+      {
+        "label": "WTI 유가",
+        "value": "$68.55",
+        "change": "-0.14",
+        "up": false,
+        "sub": "에너지 약세"
+      },
+      {
+        "label": "금값(온스)",
+        "value": "$4155.10",
+        "change": "+42.40",
+        "up": true,
+        "sub": "안전자산 수요"
+      }
+    ],
+    "koreaMarket": [
+      {
+        "label": "KOSPI",
+        "value": "N/A",
+        "change": "",
+        "up": null
+      },
+      {
+        "label": "원/달러",
+        "value": "N/A",
+        "change": "",
+        "up": null
+      },
+      {
+        "label": "삼성전자",
+        "value": "N/A",
+        "change": "",
+        "up": null
+      },
+      {
+        "label": "SK하이닉스",
+        "value": "N/A",
+        "change": "",
+        "up": null
+      }
+    ],
+    "nasdaq": [
+      {
+        "tag": "반도체·AI",
+        "tagColor": "blue",
+        "title": "Samsung Projets Huge Rise In Profit",
+        "meta": "B1면·삼성 실적",
+        "summary": "삼성전자가 2분기 영업이익 약 89.4조원(584억 달러)으로 19배 급증을 예상. AI 칩 수요 급증과 서버 DRAM 가격 강세가 주 요인. 일부 분석가들은 이익이 추정치를 상회할 수도 있다고 평가.",
+        "implication": "메모리칩 초강세 지속으로 한국 시장 쏠림 심화 가능. 삼성·SK하이닉스 양강 구도 강화로 다른 칩업체 진입장벽 상승",
+        "page": "p. B1 — Business & Finance",
+        "quote": "Samsung Electronics projected a 19-fold surge in second-quarter operating profit, signaling that its record earnings streak is set to continue amid the AI boom and red-hot demand for chips to power AI infrastructure and applications."
+      },
+      {
+        "tag": "IPO",
+        "tagColor": "green",
+        "title": "SK Hynix Exports Korean Market Fever",
+        "meta": "B9면·SK하이닉스 미국 상장",
+        "summary": "SK하이닉스가 28억 달러 규모의 미국 상장을 추진하며 금요일 상장 예정. 이는 역사상 최대 규모의 주식공모 중 하나로, 미국 투자자들의 한국 메모리칩 접근성을 크게 높일 것으로 예상.",
+        "implication": "글로벌 자금 유입으로 K-칩 수급 안정화. 원화 약세 속 수출 경쟁력 강화 신호",
+        "page": "p. B9 — Markets",
+        "quote": "SK Hynix, a South Korean chip maker and the latest global company to surpass $1 trillion in market value, kicked off the process for a U.S. listing on Monday that seeks to raise $28 billion in fresh capital."
+      },
+      {
+        "tag": "기술주",
+        "tagColor": "blue",
+        "title": "Microsoft Slashes 3,000 Xbox Jobs",
+        "meta": "B1면·마이크로소프트 구조조정",
+        "summary": "마이크로소프트가 Xbox 부문에서 3200명(전체의 약 20%)을 감원하고 4개 스튜디오를 매각·스핀오프. Game Pass 가입자 성장 부진이 배경",
+        "implication": "게임업계 부실 구조조정 심화. AI 중심 재편 가속",
+        "page": "p. B1 — Business & Finance",
+        "quote": "Microsoft will cut some 3,200 jobs from its Xbox videogames division as it restructures the struggling business."
+      },
+      {
+        "tag": "항공사",
+        "tagColor": "yellow",
+        "title": "Jet-Fuel Cost Drop Brings No Relief For Fliers",
+        "meta": "A1, A2면·항공사 연료비",
+        "summary": "제트유 가격이 4월 피크 대비 40% 하락했으나 항공사들은 요금 인하에 소극적. Spirit Airlines 파산으로 공급이 제약되며 수요도 견고해 항공사들의 가격 협상력 강화",
+        "implication": "소비자 부담은 지속. 인플레이션 완화 신호 약화",
+        "page": "p. A1, A2 — Business & Finance",
+        "quote": "Jet-fuel prices are down 40% from their peak in April amid the Iran war, but analysts say airfares aren't likely to follow as long as travelers keep paying up."
+      },
+      {
+        "tag": "M&A",
+        "tagColor": "purple",
+        "title": "Comcast's Sky to Buy ITV's Media and Entertainment Unit",
+        "meta": "B3면·Comcast-ITV 거래",
+        "summary": "영국 스카이(Comcast 자회사)가 ITV 방송의 TV 사업을 약 20억 달러에 인수. ITV 스튜디오는 별도 분리",
+        "implication": "유럽 미디어 재편 가속. 스트리밍 경쟁 심화",
+        "page": "p. B3 — Business News",
+        "quote": "Comcast's Sky is buying U.K. broadcaster ITV's TV business for about $2 billion."
+      }
+    ],
+    "korea": [
+      {
+        "tag": "핵심기업",
+        "tagColor": "blue",
+        "title": "Samsung Projets Huge Rise In Profit",
+        "meta": "B1·B9면·삼성 2분기 실적",
+        "summary": "삼성전자 2분기 영업이익 약 89.4조원으로 19배 급증 예상, 이는 추정치 85조원을 상회. 매모리칩 수급 긴장과 서버 DRAM 가격 상승이 주 배경",
+        "implication": "한국 반도체 수출 호조 지속. 다만 과도한 쏠림은 리스크",
+        "page": "p. B1 — Business & Finance",
+        "quote": "Samsung projected a 19-fold surge in second-quarter operating profit, signaling that its record earnings streak is set to continue amid the AI boom and red-hot demand for chips."
+      },
+      {
+        "tag": "글로벌진출",
+        "tagColor": "green",
+        "title": "SK Hynix Exports Korean Market Fever",
+        "meta": "B9면·SK하이닉스 미국 상장",
+        "summary": "SK하이닉스가 28억 달러 규모로 미국 상장 추진, 금요일 거래 시작 예정. 한국 메모리칩 강세가 글로벌화",
+        "implication": "K-기술 신뢰도 제고. 우리금융 인덱스펀드 대성황 지속 가능",
+        "page": "p. B9 — Markets",
+        "quote": "SK Hynix, a South Korean chip maker and the latest global company to surpass $1 trillion in market value, kicked off the process for a U.S. listing that seeks to raise $28 billion."
+      },
+      {
+        "tag": "정책",
+        "tagColor": "orange",
+        "title": "High-yield bonds with the biggest price increases",
+        "meta": "B8면·시장 여건",
+        "summary": "높은 금리 환경에서 하이일드 채권 수요 지속. 신흥국 통화 약세로 환헤지 비용 상승 중",
+        "implication": "원화 약세 상황에서 해외 자산 매입시 환헤지 비용 고려 필요",
+        "page": "p. B8 — Markets Digest",
+        "quote": "High-yield issueswith the biggest price increases show strong investor demand amid economic uncertainty."
+      }
+    ],
+    "risk": {
+      "geoRisks": [
+        {
+          "emoji": "🇮🇷",
+          "label": "이란 호르무즈 해협 미사일 공격 - 해운료 인상 위험",
+          "level": "high"
+        },
+        {
+          "emoji": "🇨🇳",
+          "label": "중국 해상 무기 시험 - 대만 긴장 심화",
+          "level": "mid"
+        },
+        {
+          "emoji": "🇪🇺",
+          "label": "유럽 NATO 재정비 - 미국 분담금 갈등 재점화 가능성",
+          "level": "mid"
+        }
+      ],
+      "bubbleChecks": [
+        {
+          "label": "한국 반도체주 쏠림 - KOSPI 중 삼성·SK하이닉스 비중 과도 집중",
+          "level": "high",
+          "isNew": true
+        },
+        {
+          "label": "AI칩 수요 확실성 - 초고물가 배경 수익성 지속 가능성 의문",
+          "level": "mid",
+          "isNew": false
+        },
+        {
+          "label": "한국 개인투자자 레버리지 상품 급증 - 'squid game' 위험",
+          "level": "high",
+          "isNew": true
+        },
+        {
+          "label": "나스닥 소형주 밸류에이션 - 스페이스X 상장 후 지수 왜곡",
+          "level": "mid",
+          "isNew": false
+        }
+      ]
+    },
+    "sectors": [
+      {
+        "name": "반도체·AI",
+        "value": "+2.17%",
+        "up": true,
+        "barPct": 85
+      },
+      {
+        "name": "통신·미디어",
+        "value": "+0.8%",
+        "up": true,
+        "barPct": 60
+      },
+      {
+        "name": "금융",
+        "value": "+1.88%",
+        "up": true,
+        "barPct": 78
+      },
+      {
+        "name": "헬스케어",
+        "value": "-1.68%",
+        "up": false,
+        "barPct": 25
+      },
+      {
+        "name": "에너지",
+        "value": "-0.2%",
+        "up": false,
+        "barPct": 42
+      },
+      {
+        "name": "소비재",
+        "value": "-0.9%",
+        "up": false,
+        "barPct": 35
+      }
+    ],
+    "spotlight": [
+      {
+        "ticker": "NVDA",
+        "desc": "AI 칩셋 강세 속 반도체 수혜주, 반도체 지수 최대 상승",
+        "badge": "+2.17%",
+        "color": "green"
+      },
+      {
+        "ticker": "SAMSUNG",
+        "desc": "2분기 영업이익 19배 급증, 메모리칩 수급 초강세",
+        "badge": "19배",
+        "color": "green"
+      },
+      {
+        "ticker": "SKHYNIX",
+        "desc": "미국 28억 달러 상장 추진, 한국 글로벌 진출 신호",
+        "badge": "$28B",
+        "color": "blue"
+      },
+      {
+        "ticker": "MSFT",
+        "desc": "Xbox 3200명 감원 구조조정, 게임부문 부실 심화",
+        "badge": "-3,200",
+        "color": "red"
+      }
+    ],
+    "macro": [
+      {
+        "date": "7/6",
+        "dateNote": "월",
+        "dot": "#2ecc8a",
+        "title": "미국 일자리 시장 회복 신호 + AI 수요 지속",
+        "sub": "나스닥 1.12% 상승으로 기술주 강세 주도, 금리 상승 압박에도 AI 수혜주 매수 우위",
+        "badgeText": "상승",
+        "badgeColor": "green"
+      },
+      {
+        "date": "7/1",
+        "dateNote": "화",
+        "dot": "#378add",
+        "title": "FRB 새 의장 Kevin Warsh 정책 미니멀화 신호",
+        "sub": "6월 의사록 132단어로 축약(4월 345단어 대비), 금리 가이던스 제거 시사로 시장 변동성 축소 예상",
+        "badgeText": "금리",
+        "badgeColor": "blue"
+      },
+      {
+        "date": "6/28",
+        "dateNote": "금",
+        "dot": "#e24b4a",
+        "title": "이란 호르무즈 미사일 공격 - 유가 상승 압박",
+        "sub": "상선 2척 피격, 4월 대비 40% 하락한 유가도 수급 긴장으로 재상승 리스크",
+        "badgeText": "위험",
+        "badgeColor": "red"
+      },
+      {
+        "date": "7/4",
+        "dateNote": "금",
+        "dot": "#2ecc8a",
+        "title": "미국 독립기념일 관계로 시장 휴장",
+        "sub": "이후 중앙은행 의사록 공개 예정. 금리 인상 신호 약화로 경기 모멘텀 지속 기대",
+        "badgeText": "휴장",
+        "badgeColor": "gray"
+      }
+    ]
+  },
+  {
     "id": "d0629",
     "label": "Jun 29 (일)",
     "dot": "#e24b4a",
