@@ -1,5 +1,633 @@
 [
   {
+    "id": "d0706",
+    "label": "Jul 6 (월)",
+    "dot": "#2ecc8a",
+    "summary": "Russell 2000이 22% 상승으로 30년 만에 최고 성과, 소형주가 빅테크 대체 자산으로 부상 중",
+    "market": [
+      {
+        "label": "S&P 500",
+        "value": "7483.24",
+        "change": "+1.76%",
+        "up": true
+      },
+      {
+        "label": "NASDAQ",
+        "value": "25832.67",
+        "change": "+2.12%",
+        "up": true
+      },
+      {
+        "label": "DOW JONES",
+        "value": "52900.07",
+        "change": "+1.97%",
+        "up": true
+      },
+      {
+        "label": "Russell 2000",
+        "value": "2996.11",
+        "change": "+22% YTD",
+        "up": true
+      }
+    ],
+    "macroIndicators": [
+      {
+        "label": "미10년 국채금리",
+        "value": "4.477%",
+        "change": "+0.05%p",
+        "up": true,
+        "sub": "경기 둔화 신호"
+      },
+      {
+        "label": "달러인덱스(DXY)",
+        "value": "N/A",
+        "change": "",
+        "up": null,
+        "sub": "상승 추세"
+      },
+      {
+        "label": "VIX 공포지수",
+        "value": "N/A",
+        "change": "",
+        "up": null,
+        "sub": "평온한 시장"
+      },
+      {
+        "label": "WTI 유가",
+        "value": "$68.69",
+        "change": "-0.54",
+        "up": false,
+        "sub": "공급 증가 신호"
+      }
+    ],
+    "koreaMarket": [
+      {
+        "label": "KOSPI",
+        "value": "N/A",
+        "change": "",
+        "up": null
+      },
+      {
+        "label": "KOSDAQ",
+        "value": "N/A",
+        "change": "",
+        "up": null
+      },
+      {
+        "label": "원/달러",
+        "value": "N/A",
+        "change": "",
+        "up": null,
+        "sub": "환율 데이터 미포함"
+      },
+      {
+        "label": "외국인 순매수",
+        "value": "N/A",
+        "change": "",
+        "up": null
+      }
+    ],
+    "nasdaq": [
+      {
+        "tag": "소형주",
+        "tagColor": "blue",
+        "title": "Russell 2000 22% 상승, 30년 만 최고 성과",
+        "meta": "A1면·소형주 회복",
+        "summary": "Russell 2000이 올해 첫 6개월간 22% 상승하며 1991년 이후 최고의 성과를 기록했다. 나스닥과의 성과 격차는 약 9%p. 인공지능 주도의 빅테크 쏠림이 완화되면서 광범위한 시장 회복이 진행 중.",
+        "implication": "소형주 강세는 시장 균형 회복 신호. AI 쏠림 해소로 가치주 기회 증가. 다만 변동성 위험은 여전.",
+        "page": "p. A1 — Markets",
+        "quote": "The Russell 2000, which tracks shares of smaller companies, climbed some 22% in the first six months of the year, posting its best first half since 1991."
+      },
+      {
+        "tag": "기술",
+        "tagColor": "green",
+        "title": "Tech CEO들 AI 일자리 파괴 시나리오 후퇴",
+        "meta": "B1면·AI 고용 영향",
+        "summary": "작년 AI 업계 리더들의 '대규모 일자리 감소' 경고가 올해 톤이 바뀌었다. OpenAI의 알트만, Anthropic의 아모데이는 AI로 인한 생산성 향상이 오히려 고용을 유지하거나 증가시킬 수 있다고 주장. 경제의 창의성에 달려 있다는 해석.",
+        "implication": "AI 투자 심리 회복 긍정 신호. 노동시장 충격 우려 완화. 기술주 상승에 긍정적 영향 가능.",
+        "page": "p. B1 — Business",
+        "quote": "Our industry underestimated how much we're going to be able to keep people at the center of everything."
+      },
+      {
+        "tag": "에너지",
+        "tagColor": "yellow",
+        "title": "미국 철강업 전력 위기 경고, AI 데이터센터와 경쟁",
+        "meta": "B1면·전력 공급",
+        "summary": "철강업계가 AI 데이터센터 급증으로 인한 전력 경합을 경고했다. PJM 지역 전력비용이 1분기에 76% 급등. 2027년부터 공급 부족 전망. 데이터센터의 무중단 전력 요구로 철강업 생산 차질 우려.",
+        "implication": "에너지 인플레 위험 재확대 신호. 철강주 마진 압박. 전력 관련 정책 리스크 증가.",
+        "page": "p. B1 — Business",
+        "quote": "We're very reliant on electricity to make steel. We've had stable electricity prices for decades, and now we think that's at stake."
+      },
+      {
+        "tag": "이슈",
+        "tagColor": "red",
+        "title": "FIFA, 트럼프 압력에 발구기 선수 출전 정지 해제",
+        "meta": "A14면·스포츠·정치 개입",
+        "summary": "트럼프 대통령이 FIFA 회장에 전화해 미국 선수 폴라린 발로군의 정지 처분 해제를 강요. FIFA는 '재량권' 규정을 인용해 정지를 철회. 스포츠 경영 독립성 논란 심화.",
+        "implication": "국가권력의 스포츠 개입 심화. 글로벌 스포츠 거버넌스 신뢰도 하락. 정치적 리스크 인수분해 필요.",
+        "page": "p. A14 — Sports",
+        "quote": "Trump called FIFA President Gianni Infantino last week, urging him to review Balogun's automatic one-game suspension."
+      },
+      {
+        "tag": "Tech",
+        "tagColor": "blue",
+        "title": "Google 등 빅테크, 간접 수자원 사용 과소 보고",
+        "meta": "B1면·ESG·수자원",
+        "summary": "Google, Amazon, Apple이 데이터센터 직접 수자원 사용은 보고하지만 전력 생산 과정의 간접 사용량(3배 규모)은 미공시. 메타만 전체 사용량 공개. 애리조나 등 물 부족 지역 위협.",
+        "implication": "ESG 투명성 부족 리스크. 물 갈등 지역 규제 강화 가능. 데이터센터 실제 환경비용 재평가 필요.",
+        "page": "p. B4 — Technology",
+        "quote": "Indirect water consumption can vary a great deal, depending on how power is generated—coal and nuclear need a lot of water, while natural gas needs less."
+      }
+    ],
+    "korea": [
+      {
+        "tag": "글로벌",
+        "tagColor": "blue",
+        "title": "이란 최고지도자 호메이니 장례식, 유럽은 독립 준비",
+        "meta": "A7면·국제 정치",
+        "summary": "이란 최고지도자 알리 호메이니 사망 후 6일간 장례식. 20만 명 동원 전망. 동시에 유럽 지도자들은 미국과의 '결별' 회의 개최. NATO 동맹 재편 우려 심화.",
+        "implication": "지정학적 긴장 고조. 유럽 방위비 증가(NATO 5% 목표). 에너지·전략 리스크 상승.",
+        "page": "p. A7 — World News",
+        "quote": "European leaders began to explore separate paths... Nobody has filed divorce papers, and important players on both sides are working hard to keep a loveless marriage going."
+      },
+      {
+        "tag": "정책",
+        "tagColor": "green",
+        "title": "미국-유럽 NATO 정상회담 앞두고 'de-Americanization' 움직임",
+        "meta": "A10면·동맹 균열",
+        "summary": "트럼프의 NATO 가치 의문, 그린란드·캐나다 병합 위협으로 유럽이 독립 전략 추진. 데이터 로컬화, 자체 AI 회사, 방위 자립. NATO 2.0 모색 중.",
+        "implication": "기술 탈미국화 가속. 유럽 기술주·방위산업 기회. 미국 기술 회사 규제 리스크 증가.",
+        "page": "p. A10 — World News",
+        "quote": "American allies have begun pushing the gas pedal on an unprecedented experiment in de-Americanization."
+      },
+      {
+        "tag": "정치",
+        "tagColor": "red",
+        "title": "미국 GOP 하원, 극소 다수파로 흔들림",
+        "meta": "A1면·정치 위험",
+        "summary": "GOP 하원 의원 다수가 재선 포기, 낙선 또는 다른 직책 도전. 219-212 극소 다수파로 법안 통과 불확실. 예산안, 국방법 통과 위기.",
+        "implication": "재정정책 불확실성 증가. 방위비 예산 지연 가능. 시장 변동성 요인.",
+        "page": "p. A1 — U.S. News",
+        "quote": "A growing number of GOP lawmakers have little incentive to come to work or toe the party line, putting critical legislation in danger."
+      }
+    ],
+    "risk": {
+      "geoRisks": [
+        {
+          "emoji": "🇮🇷",
+          "label": "이란 호메이니 장례식 대규모 시위 / 전략 평형 재조정",
+          "level": "high"
+        },
+        {
+          "emoji": "🇪🇺",
+          "label": "유럽 'de-Americanization' 움직임 / NATO 균열 우려",
+          "level": "high"
+        },
+        {
+          "emoji": "🇺🇸",
+          "label": "GOP 여소야대 정국 / 재정정책 불확실성",
+          "level": "mid"
+        },
+        {
+          "emoji": "⚡",
+          "label": "미국 전력 공급 부족(2027~) / 산업 차질 위험",
+          "level": "mid"
+        }
+      ],
+      "bubbleChecks": [
+        {
+          "label": "Russell 2000 22% 상승 = 과매수 위험 점검 필요",
+          "level": "mid",
+          "isNew": true
+        },
+        {
+          "label": "AI 일자리 악영향 후퇴 = 기술주 강세 정당화 약해짐",
+          "level": "low",
+          "isNew": false
+        },
+        {
+          "label": "빅테크 수자원 과소 보고 = ESG 리스크 재평가 필요",
+          "level": "mid",
+          "isNew": true
+        },
+        {
+          "label": "유럽 방위비 급증 = 인플레 재점화 가능성",
+          "level": "mid",
+          "isNew": false
+        }
+      ]
+    },
+    "sectors": [
+      {
+        "name": "AI·반도체",
+        "value": "+2.1%",
+        "up": true,
+        "barPct": 72
+      },
+      {
+        "name": "소형주(Russell 2000)",
+        "value": "+22% YTD",
+        "up": true,
+        "barPct": 88
+      },
+      {
+        "name": "에너지·유틸리티",
+        "value": "-0.8%",
+        "up": false,
+        "barPct": 38
+      },
+      {
+        "name": "금융·보험",
+        "value": "+1.2%",
+        "up": true,
+        "barPct": 58
+      },
+      {
+        "name": "헬스케어",
+        "value": "+0.5%",
+        "up": true,
+        "barPct": 52
+      },
+      {
+        "name": "방위산업·우방",
+        "value": "+1.8%",
+        "up": true,
+        "barPct": 66
+      }
+    ],
+    "spotlight": [
+      {
+        "ticker": "IWM",
+        "desc": "Russell 2000 ETF, 22% YTD 상승 / 소형주 강세 지표",
+        "badge": "BUY",
+        "color": "green"
+      },
+      {
+        "ticker": "NVDA",
+        "desc": "AI 수혜주이지만 쏠림 완화 신호 / 손익분기점 점검",
+        "badge": "HOLD",
+        "color": "yellow"
+      },
+      {
+        "ticker": "DGE",
+        "desc": "다이아지오, 주류 수요 부진 / 담배 수준 저평가",
+        "badge": "BUY",
+        "color": "blue"
+      },
+      {
+        "ticker": "LMT",
+        "desc": "록히드마틴, NATO 방위비 증가 수혜 / 중기 상승 추세",
+        "badge": "BUY",
+        "color": "green"
+      }
+    ],
+    "macro": [
+      {
+        "date": "6/25",
+        "dateNote": "화",
+        "dot": "#378add",
+        "title": "FOMC 의사록 공개",
+        "sub": "금리 경로 의견 분분",
+        "badgeText": "통화정책",
+        "badgeColor": "blue"
+      },
+      {
+        "date": "7/1~7/4",
+        "dateNote": "미국 250주년 독립기념일 행사",
+        "dot": "#2ecc8a",
+        "title": "트럼프 기념 연설 / 애국주의 강조",
+        "sub": "정치 불확실성 상승",
+        "badgeText": "정치",
+        "badgeColor": "red"
+      },
+      {
+        "date": "7/9",
+        "dateNote": "수",
+        "dot": "#378add",
+        "title": "FOMC 정례회의 예상",
+        "sub": "금리 인상 가능성 낮음",
+        "badgeText": "금리",
+        "badgeColor": "blue"
+      },
+      {
+        "date": "7/11",
+        "dateNote": "금",
+        "dot": "#2ecc8a",
+        "title": "미국 일자리 지표 발표",
+        "sub": "고용 시장 강도 평가",
+        "badgeText": "고용",
+        "badgeColor": "green"
+      }
+    ]
+  },
+  {
+    "id": "d0630",
+    "label": "Jun 30 (Mon)",
+    "dot": "#2ecc8a",
+    "summary": "Dow hits record 52,182, Nasdaq rebounds 2.1%, AI boom continues despite rate concerns",
+    "market": [
+      {
+        "label": "NASDAQ",
+        "value": "25820.14",
+        "change": "+2.07%",
+        "up": true
+      },
+      {
+        "label": "S&P 500",
+        "value": "7440.43",
+        "change": "+1.18%",
+        "up": true
+      },
+      {
+        "label": "DOW",
+        "value": "52182.74",
+        "change": "+0.59%",
+        "up": true
+      },
+      {
+        "label": "Russell 2000",
+        "value": "3010.42",
+        "change": "+0.01%",
+        "up": true
+      }
+    ],
+    "macroIndicators": [
+      {
+        "label": "미10년 국채금리",
+        "value": "4.375%",
+        "change": "+0.003%p",
+        "up": true,
+        "sub": "성장주 밸류 압박"
+      },
+      {
+        "label": "VIX 공포지수",
+        "value": "17.65",
+        "change": "-0.76",
+        "up": true,
+        "sub": "20 이상 = 위험구간"
+      },
+      {
+        "label": "달러인덱스(DXY)",
+        "value": "97.49",
+        "change": "-0.11%",
+        "up": false,
+        "sub": "달러 약세 = 신흥국 수혜"
+      },
+      {
+        "label": "WTI 유가",
+        "value": "$70.75",
+        "change": "+$1.52",
+        "up": true,
+        "sub": "에너지 섹터 지지"
+      }
+    ],
+    "koreaMarket": [
+      {
+        "label": "KOSPI",
+        "value": "N/A",
+        "change": "",
+        "up": null
+      },
+      {
+        "label": "KOSDAQ",
+        "value": "N/A",
+        "change": "",
+        "up": null
+      },
+      {
+        "label": "원/달러",
+        "value": "N/A",
+        "change": "",
+        "up": null,
+        "sub": "환율 미제시"
+      },
+      {
+        "label": "외국인 매매",
+        "value": "N/A",
+        "change": "",
+        "up": null
+      }
+    ],
+    "nasdaq": [
+      {
+        "tag": "Tech",
+        "tagColor": "blue",
+        "title": "Alphabet Joins Dow Index as Tech Rallies",
+        "meta": "B1",
+        "summary": "Alphabet rose 4.8% to lead Dow gains on first day as index component. Nasdaq recovered from five-session losing streak, rising 2.1%. Tech rally driven by gains in Meta, Amazon, and Nvidia.",
+        "implication": "AI enthusiasm sustains despite rate headwinds; Magnificent Seven continues leadership",
+        "page": "p. B1 — Markets",
+        "quote": "Alphabet's climb was just part of a broad advance in technology shares that sent the Nasdaq composite up 2.1%"
+      },
+      {
+        "tag": "Crypto",
+        "tagColor": "purple",
+        "title": "Strategy Charts Bitcoin Comeback with Buybacks",
+        "meta": "B1",
+        "summary": "Michael Saylor's Strategy announced $2B in share repurchases and potential bitcoin sales up to $1.25B to bolster confidence. Bitcoin holdings valued at ~$51B; company faces pressure from discount-to-NAV trading.",
+        "implication": "Crypto volatility creates both opportunity and risk; Treasury companies adapting to market pressure",
+        "page": "p. B1 — Business",
+        "quote": "Strategy said it had boosted this cash reserve to $2.55 billion as of June 28"
+      },
+      {
+        "tag": "M&A",
+        "tagColor": "green",
+        "title": "Comcast to Split Media and Connectivity Units",
+        "meta": "A1, B2",
+        "summary": "Comcast announced spinoff of NBCUniversal and Sky as standalone media company. Tax-free separation expected within next year; shares jumped 4.5%. Reflects industry trend away from bundled media-telecom models.",
+        "implication": "Unbundling trend accelerates; legacy telecom converges compete via pure-play focus",
+        "page": "p. A1 — Business News",
+        "quote": "We simply don't see these conditions changing anytime soon"
+      },
+      {
+        "tag": "Semiconductors",
+        "tagColor": "orange",
+        "title": "Samsung, SK Hynix Plan $500B Korea Chip Hub",
+        "meta": "B4",
+        "summary": "Samsung and SK Hynix jointly investing over $500B in new southwest Korea chip fab to tap AI memory boom. Government backing massive expansion as DRAM/NAND demand surges amid AI build-out.",
+        "implication": "Semiconductor capacity race intensifies; geopolitical concentration risks in Korea",
+        "page": "p. B4 — Technology",
+        "quote": "Samsung Electronics and SK Hynix plan to invest more than $500 billion in a new chip-making hub"
+      },
+      {
+        "tag": "Space",
+        "tagColor": "cyan",
+        "title": "Rocket Lab to Acquire Iridium in $8B Satellite Deal",
+        "meta": "B4",
+        "summary": "Rocket Lab agreed to buy Iridium Communications for $8B (enterprise value), combining launch capabilities with 66-satellite constellation. Shares surged: RKLB +16%, IRDM +25%. Positions against SpaceX dominance.",
+        "implication": "Satellite consolidation accelerates; commercial space competition heats up",
+        "page": "p. B4 — Technology",
+        "quote": "Rocket Lab said the deal would marry its launch and satellite-manufacturing capabilities with Iridium's global reach"
+      }
+    ],
+    "korea": [
+      {
+        "tag": "반도체",
+        "tagColor": "orange",
+        "title": "삼성·SK하이닉스 50조원 투자 협력",
+        "meta": "B4",
+        "summary": "삼성전자와SK하이닉스가 한국 남서부에 새 반도체 공장 구축을 위해 500억달러(약 50조원) 이상 투자 계획. AI 메모리 수요 폭발 속 정부 지원. 한국의 반도체 산업 우위 강화.",
+        "implication": "글로벌 AI 칩 경쟁 심화; 한국 반도체 기업 집중도 위험성",
+        "page": "p. B4 — Technology",
+        "quote": "Samsung and SK Hynix plan to invest more than $500 billion in a new chip-making hub"
+      },
+      {
+        "tag": "금융",
+        "tagColor": "blue",
+        "title": "해외 벤치마크 부재로 401k 민간자산 투자 제약",
+        "meta": "B10",
+        "summary": "401k 펀드가 민간자산(프라이빗 에쿼티) 투자 시 통일된 벤치마크 부재로 규제 준수 어려움. 케임브리지 어소시에이츠 등 벤치마크 개발 기업들이 투명성 강화 노력.",
+        "implication": "신흥 자산군 진출 장벽 높음; 벤치마크 표준화 필요",
+        "page": "p. B10 — Markets",
+        "quote": "the absence of universally accepted benchmarks for private-market strategies"
+      },
+      {
+        "tag": "부동산",
+        "tagColor": "green",
+        "title": "연방준비제도 침묵이 모기지금리 상승 초래할 수 있다",
+        "meta": "B11",
+        "summary": "Warsh 신임 연준의장이 시장 유도 정책 선호로 포워드 가이던스 축소. 금리 변동성 증가 → 모기지 담보 증권(MBS) 투자자 리스크 프리미엄 확대 가능성.",
+        "implication": "주택담보 모기지금리 상승 우려; 주택시장 둔화 신호",
+        "page": "p. B11 — Heard on Street",
+        "quote": "Less guidance and more volatility can add a premium to bonds backed by home loans"
+      }
+    ],
+    "risk": {
+      "geoRisks": [
+        {
+          "emoji": "🇰🇷",
+          "label": "반도체 지정학 리스크: 한국 집중 심화 (삼성·SK 50조원 투자)",
+          "level": "high"
+        },
+        {
+          "emoji": "🇺🇸",
+          "label": "인플레이션 재부상 우려: 금리 경로 불확실성 높아짐",
+          "level": "mid"
+        },
+        {
+          "emoji": "🛰️",
+          "label": "스페이스X 독점 심화: 록킷랩 M&A로 경쟁 재편",
+          "level": "mid"
+        }
+      ],
+      "bubbleChecks": [
+        {
+          "label": "AI 밸류에이션 지속 상승: NVDA 등 매그니피센트7 강세",
+          "level": "high",
+          "isNew": true
+        },
+        {
+          "label": "마이크로소프트 등급 상승장: 분기 이익이 순환적 회복 수준 초과",
+          "level": "mid",
+          "isNew": false
+        },
+        {
+          "label": "모기지 금리 불확실성: 연준 가이던스 축소로 변동성 증가",
+          "level": "mid",
+          "isNew": true
+        },
+        {
+          "label": "암호화폐 신뢰도 회복: 비트코인 매도 우려 vs 장기 낙관론",
+          "level": "mid",
+          "isNew": false
+        }
+      ]
+    },
+    "sectors": [
+      {
+        "name": "반도체·AI",
+        "value": "+3.83%",
+        "up": true,
+        "barPct": 88
+      },
+      {
+        "name": "에너지",
+        "value": "+2.15%",
+        "up": true,
+        "barPct": 72
+      },
+      {
+        "name": "금융",
+        "value": "+0.28%",
+        "up": true,
+        "barPct": 51
+      },
+      {
+        "name": "헬스케어",
+        "value": "+0.72%",
+        "up": true,
+        "barPct": 58
+      },
+      {
+        "name": "소비재",
+        "value": "+0.65%",
+        "up": true,
+        "barPct": 56
+      },
+      {
+        "name": "유틸리티",
+        "value": "-0.35%",
+        "up": false,
+        "barPct": 42
+      }
+    ],
+    "spotlight": [
+      {
+        "ticker": "NVDA",
+        "desc": "AI 수혜주 강세 지속",
+        "badge": "+2.44%",
+        "color": "green"
+      },
+      {
+        "ticker": "GOOGL",
+        "desc": "다우지수 편입 첫 날 강세",
+        "badge": "+4.8%",
+        "color": "green"
+      },
+      {
+        "ticker": "RKLB",
+        "desc": "아이리듐 인수 후 급등",
+        "badge": "+16%",
+        "color": "green"
+      },
+      {
+        "ticker": "CMCSA",
+        "desc": "미디어 분사 계획에 반응",
+        "badge": "+4.5%",
+        "color": "green"
+      }
+    ],
+    "macro": [
+      {
+        "date": "6/26",
+        "dateNote": "Wed",
+        "dot": "#378add",
+        "title": "연준 정책 회의 결과 발표",
+        "sub": "Warsh 의장, 포워드 가이던스 축소·시장 유도 정책 강조",
+        "badgeText": "금리정책",
+        "badgeColor": "blue"
+      },
+      {
+        "date": "6/28",
+        "dateNote": "Fri",
+        "dot": "#e24b4a",
+        "title": "PCE 인플레이션 지표 발표 예상",
+        "sub": "금리 경로 재평가 신호",
+        "badgeText": "인플레",
+        "badgeColor": "red"
+      },
+      {
+        "date": "6/30",
+        "dateNote": "Sun",
+        "dot": "#2ecc8a",
+        "title": "Q2 기업실적 시즌 진행 중",
+        "sub": "마그니피센트7 주도 강세 지속, AI 밸류에이션 재평가",
+        "badgeText": "어닝",
+        "badgeColor": "green"
+      }
+    ]
+  },
+  {
     "id": "d0703",
     "label": "Jul 3 (Fri)",
     "dot": "#e24b4a",
