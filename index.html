@@ -328,15 +328,23 @@ const GH_API = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${G
 const GH_RAW = `https://raw.githubusercontent.com/${GH_OWNER}/${GH_REPO}/main/${GH_FILE}?t=`;
 
 async function loadFromGitHub() {
-  try {
-    const res = await fetch(GH_RAW + Date.now()); // cache-bust
-    if (!res.ok) throw new Error('불러오기 실패');
-    const data = await res.json();
-    return Array.isArray(data) ? data : [];
-  } catch(e) {
-    console.error('GitHub load error', e);
-    return [];
+  // Try 1: GitHub Pages same-domain URL (no CORS issue)
+  const pagesUrl = `https://${GH_OWNER}.github.io/${GH_REPO}/${GH_FILE}?t=${Date.now()}`;
+  // Try 2: raw.githubusercontent.com
+  const rawUrl = `https://raw.githubusercontent.com/${GH_OWNER}/${GH_REPO}/main/${GH_FILE}?t=${Date.now()}`;
+
+  for (const url of [pagesUrl, rawUrl]) {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) continue;
+      const data = await res.json();
+      return Array.isArray(data) ? data : [];
+    } catch(e) {
+      console.warn('GitHub load failed for', url, e);
+    }
   }
+  console.error('GitHub load error: all URLs failed');
+  return [];
 }
 
 async function saveToGitHub(allData) {
