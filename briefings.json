@@ -1,27 +1,27 @@
 [
   {
-    "id": "d0618",
-    "label": "Jun 18 (Wed)",
+    "id": "d0629_1783494607828",
+    "label": "Jun 29 (Mon)",
     "dot": "#e24b4a",
-    "summary": "Fed 금리 인상 신호로 주가 급락, 반도체·기술주 동반 하락",
+    "summary": "AI 칩값 폭등으로 메모리 반도체 회사 수익 급증, 클라우드 기업들 비용 부담 증가",
     "market": [
       {
         "label": "NASDAQ",
-        "value": "26021.66",
-        "change": "-354.69",
+        "value": "25297.62",
+        "change": "-1220.31",
         "up": false
       },
       {
         "label": "S&P 500",
-        "value": "7420.10",
-        "change": "-91.25",
+        "value": "7354.02",
+        "change": "-146.56",
         "up": false
       },
       {
         "label": "DOW",
-        "value": "51492.55",
-        "change": "-507.12",
-        "up": false
+        "value": "51876.11",
+        "change": "311.41",
+        "up": true
       },
       {
         "label": "TQQQ",
@@ -33,30 +33,30 @@
     "macroIndicators": [
       {
         "label": "달러인덱스(DXY)",
-        "value": "96.75",
-        "change": "+0.60",
+        "value": "101.37",
+        "change": "0.52",
         "up": true,
         "sub": ""
       },
       {
         "label": "미10년 국채금리",
-        "value": "4.462%",
-        "change": "↑",
-        "up": true,
-        "sub": "4.5% 근처"
+        "value": "4.372%",
+        "change": "-0.008",
+        "up": false,
+        "sub": ""
       },
       {
         "label": "VIX 공포지수",
-        "value": "18.44",
-        "change": "+2.03",
+        "value": "18.41",
+        "change": "2.01",
         "up": true,
         "sub": ""
       },
       {
         "label": "WTI 유가",
-        "value": "$76.79",
-        "change": "+$0.74",
-        "up": true,
+        "value": "$69.23",
+        "change": "-$6.62",
+        "up": false,
         "sub": ""
       }
     ],
@@ -89,1110 +89,224 @@
     ],
     "nasdaq": [
       {
-        "tag": "AI반도체",
+        "tag": "AI 메모리",
         "tagColor": "blue",
-        "title": "인텔·브로드컴·마이크론 반등",
-        "meta": "반도체 지수 2% 하락 후 부분 회복",
-        "summary": "PHLX 반도체 지수가 화요일 2번째 최악의 날 기록 후 인텔 3.5%, 브로드컴 4.3%, 마이크론 2.2% 상승",
-        "implication": "메모리칩 수급 긴장 완화로 바닥 의심",
-        "page": "B12",
-        "quote": ""
-      },
-      {
-        "tag": "AI칩코스트",
-        "tagColor": "blue",
-        "title": "애플 제품 가격 인상 검토",
-        "meta": "메모리·스토리지 칩 비용 급증",
-        "summary": "팀 쿡 CEO, 메모리칩 DRAM 가격이 전년비 4배 상승, 스토리지도 급등으로 iPhone 가격 인상 불가피",
-        "implication": "AI 데이터센터 수요가 소비자 기기 원가를 잠식",
+        "title": "Micron Technology 1분기 수익 급증",
+        "meta": "DRAM 60% 인상, NAND 80% 인상",
+        "summary": "고대역폭 메모리 수요 급증으로 메모리 칩 가격 폭증. Micron 1분기 매출 $18B로 분기 전 대비 3배",
+        "implication": "메모리 칩 공급 병목으로 AI 인프라 비용 상승. 클라우드 기업들의 이익 축소 우려",
         "page": "B1",
-        "quote": "Unfortunately, price increases are unavoidable"
+        "quote": "We are witnessing an enormous transfer of cash from the providers of AI to the memory-chip makers"
       },
       {
-        "tag": "우주산업",
-        "tagColor": "green",
-        "title": "SpaceX 랠리 약세로 전환",
-        "meta": "IPO 후 3거래일 만에 50% 상승 후 5% 하락",
-        "summary": "스페이스X 주가가 IPO 이후 개인투자자들의 무분별한 매수로 $220 근처까지 상승했으나 순조로움이 꺾임",
-        "implication": "소매 투자자의 과열 양극화 신호",
-        "page": "B12",
-        "quote": "We're running out of superlatives to describe retail enthusiasm for SpaceX"
-      },
-      {
-        "tag": "신발신발",
-        "tagColor": "yellow",
-        "title": "Allbirds -> Smartbird로 회사명 변경",
-        "meta": "AI 신발회사 전환",
-        "summary": "Allbirds가 회사명을 Smartbird로 변경하고 새 CEO 영입, 신발 사업에서 AI 사업으로 전환",
-        "implication": "실패한 신발 비즈니스 모델의 포기",
-        "page": "B4",
-        "quote": ""
-      },
-      {
-        "tag": "보험업",
-        "tagColor": "red",
-        "title": "건강보험사들 쉬운 수익 종료",
-        "meta": "Humana, UnitedHealth, CVS Health",
-        "summary": "의료비용 상승세 진정, Trump 행정부 우호적 정책으로 보험사 주가 반등. Humana +45%, CVS +29%, UnitedHealth +25% YTD",
-        "implication": "현재 valuation은 회복을 완전히 가격책정했으나 더 이상의 쉬운 수익 기대 어려움",
-        "page": "B12",
-        "quote": "Health Insurers' Easy Gains Are Over"
-      }
-    ],
-    "korea": [
-      {
-        "tag": "연준정책",
-        "tagColor": "red",
-        "title": "Kevin Warsh 연준 의장 첫 회의에서 금리 인상 신호",
-        "meta": "19명 중 9명이 연말까지 금리 인상 전망, 3월에는 0명",
-        "summary": "새 연준의장 Kevin Warsh 취임 첫 회의에서 놀랍게도 금리 인상 시그널. 19명 FOMC 위원 중 9명이 2026년 말까지 최소 1회 인상 전망, 3월 회의에서는 0명이었음.",
-        "implication": "트럼프가 금리 인상을 피할 것으로 예상했으나 인플레 압박으로 방향 선회. 미국 채권·달러 강세, 성장주 약세",
-        "page": "A1, B11",
-        "quote": "We have the capability and commitment to deliver on our price stability objective"
-      },
-      {
-        "tag": "에너지정책",
-        "tagColor": "green",
-        "title": "미국-이란 전쟁 종료, 유가 급락",
-        "meta": "브렌트유 배럴당 $80 이하, WTI $76.79",
-        "summary": "미국과 이란의 전쟁 종료 합의로 유가 급락. 한 달 전 $112 근처에서 32% 하락. IEA는 2027년 유가 과잉공급 예상",
-        "implication": "인플레 압박 완화 긍정, 다만 제한적 규모. 이미 유가 55%는 반영된 상태",
-        "page": "A1, B11",
-        "quote": "Our first look at 2027 balances shows a significant overhang emerging next year"
-      },
-      {
-        "tag": "사회보장제도",
-        "tagColor": "red",
-        "title": "사회보장기금 고갈 임박",
-        "meta": "2032년 Q4 고갈 예상, 급여 21% 자동 삭감",
-        "summary": "미국 사회보장기금의 노령연금 신탁이 2032년 4분기에 고갈될 예상. 이로 인해 2026년 당선된 상원의원들이 임기 중 자동 급여 삭감을 직면할 수 있음",
-        "implication": "장기 재정 위기, 세금 인상이나 급여 삭감 중 택일 필요. 정치적 핫이슈로 부상",
-        "page": "B12",
-        "quote": "The 33 senators elected to full terms in November will have the unpleasant distinction of being the first U.S. politicians who might have to deal with automatic Social Security benefit cuts while in office"
-      }
-    ],
-    "risk": {
-      "geoRisks": [
-        {
-          "emoji": "🌍",
-          "label": "미국-이란 전쟁 종료 (긍정적)",
-          "level": "low"
-        },
-        {
-          "emoji": "💰",
-          "label": "인플레 재확대 신호",
-          "level": "high"
-        }
-      ],
-      "bubbleChecks": [
-        {
-          "label": "SpaceX IPO 소매 과열",
-          "level": "high",
-          "isNew": true
-        },
-        {
-          "label": "AI 칩 원가 상승 압박",
-          "level": "mid",
-          "isNew": false
-        }
-      ]
-    },
-    "sectors": [
-      {
-        "name": "반도체·AI",
-        "value": "NASDAQ -1.34%, Semiconductor -2%",
-        "up": false,
-        "barPct": 25
-      },
-      {
-        "name": "기술",
-        "value": "NASDAQ -1.34%",
-        "up": false,
-        "barPct": 25
-      },
-      {
-        "name": "금융",
-        "value": "금리 인상 신호로 혼조",
-        "up": false,
-        "barPct": 40
-      },
-      {
-        "name": "헬스케어",
-        "value": "보험사 +25~45% YTD",
-        "up": true,
-        "barPct": 75
-      },
-      {
-        "name": "소비재",
-        "value": "Target, Estée Lauder 하락",
-        "up": false,
-        "barPct": 20
-      },
-      {
-        "name": "에너지",
-        "value": "유가 반등 $76.79",
-        "up": true,
-        "barPct": 55
-      }
-    ],
-    "spotlight": [
-      {
-        "ticker": "FED",
-        "desc": "Kevin Warsh 첫 회의, 금리 인상 신호",
-        "badge": "정책변화",
-        "color": "red"
-      },
-      {
-        "ticker": "AAPL",
-        "desc": "메모리칩 가격 4배 상승으로 iPhone 가격 인상 불가피",
-        "badge": "비용압박",
-        "color": "yellow"
-      },
-      {
-        "ticker": "UNH, HUM, CVS",
-        "desc": "의료보험 회사들 비용 안정화로 반등, 이미 회복을 반영",
-        "badge": "밸류트랩?",
-        "color": "yellow"
-      },
-      {
-        "ticker": "SPCX",
-        "desc": "IPO 후 50% 상승 후 5% 하락, 소매 과열 신호",
-        "badge": "소매과열",
-        "color": "blue"
-      }
-    ],
-    "macro": [
-      {
-        "date": "2026-06-18",
-        "dateNote": "연준 회의",
-        "dot": "#e24b4a",
-        "title": "Fed, 금리 인상 신호로 주가 급락",
-        "sub": "NASDAQ -1.34%, S&P 500 -1.21%, DOW -0.98%",
-        "badgeText": "정책역행",
-        "badgeColor": "red"
-      },
-      {
-        "date": "2026-06-18",
-        "dateNote": "에너지",
-        "dot": "#2ecc8a",
-        "title": "미국-이란 전쟁 종료, 유가 급락",
-        "sub": "WTI $76.79 (+$0.74), 한 달 전 대비 32% 하락",
-        "badgeText": "인플레완화",
-        "badgeColor": "green"
-      },
-      {
-        "date": "2026-06-18",
-        "dateNote": "기업실적",
-        "dot": "#378add",
-        "title": "Apple 메모리칩 가격 급등으로 iPhone 가격 인상 검토",
-        "sub": "DRAM 가격 전년비 4배, 스토리지 4배 상승",
-        "badgeText": "원가상승",
-        "badgeColor": "blue"
-      }
-    ]
-  },
-  {
-    "id": "d0617",
-    "label": "Jun 17 (Wed)",
-    "dot": "#e24b4a",
-    "summary": "SpaceX 급등에도 불구하고 기술주 약세, S&P 500·나스닥 하락",
-    "market": [
-      {
-        "label": "NASDAQ",
-        "value": "26376.34",
-        "change": "-307.60",
-        "up": false
-      },
-      {
-        "label": "S&P 500",
-        "value": "7511.35",
-        "change": "-42.94",
-        "up": false
-      },
-      {
-        "label": "DOW",
-        "value": "51999.67",
-        "change": "328.64",
-        "up": true
-      },
-      {
-        "label": "TQQQ",
-        "value": "N/A",
-        "change": "N/A",
-        "up": false
-      }
-    ],
-    "macroIndicators": [
-      {
-        "label": "달러인덱스(DXY)",
-        "value": "96.15",
-        "change": "-0.07",
-        "up": false,
-        "sub": ""
-      },
-      {
-        "label": "미10년 국채금리",
-        "value": "4.427%",
-        "change": "N/A",
-        "up": false,
-        "sub": ""
-      },
-      {
-        "label": "VIX 공포지수",
-        "value": "16.41",
-        "change": "0.21",
-        "up": true,
-        "sub": ""
-      },
-      {
-        "label": "WTI 유가",
-        "value": "$76.05",
-        "change": "-$4.70",
-        "up": false,
-        "sub": ""
-      }
-    ],
-    "koreaMarket": [
-      {
-        "label": "KOSPI",
-        "value": "N/A",
-        "change": "N/A",
-        "up": true
-      },
-      {
-        "label": "KOSDAQ",
-        "value": "N/A",
-        "change": "N/A",
-        "up": true
-      },
-      {
-        "label": "원/달러",
-        "value": "N/A",
-        "change": "N/A",
-        "up": false,
-        "sub": ""
-      },
-      {
-        "label": "외국인 순매수",
-        "value": "N/A",
-        "change": "N/A",
-        "up": true
-      }
-    ],
-    "nasdaq": [
-      {
-        "tag": "SPCX",
+        "tag": "자율주행",
         "tagColor": "blue",
-        "title": "SpaceX 주가 급등",
-        "meta": "IPO 이후 3거래일 연속 상승",
-        "summary": "SpaceX는 IPO 가격 $135에서 $201.80까지 급등하며 3거래일 연속 상승. 첫날 1.8백만 계약이 체결되어 Meta 기록을 경신",
-        "implication": "AI 강세장 속 기술주 회전 투자, 조기 익절 우려",
+        "title": "Wayve, 스텔란티스와 자율주행 계약 체결",
+        "meta": "Stellantis, Nissan과 2028년부터 공급 계약",
+        "summary": "영국 AI 자율주행 스타트업 Wayve가 스텔란티스의 Jeep에 기술 탑재. 2028년 상용화 목표",
+        "implication": "Tesla와 Waymo의 자율주행 경쟁에 신규 플레이어 진입. 엔드-투-엔드 AI 방식 확산",
         "page": "B1",
-        "quote": "SpaceX's market value is now nearing $3 trillion after its shares jumped 19% in their first day"
+        "quote": "Not everyone wants to buy a Tesla. Our opportunity is to bring this technology to every other automaker"
       },
       {
-        "tag": "NVDA",
-        "tagColor": "red",
-        "title": "반도체 약세 지속",
-        "meta": "PHLX 반도체 지수 -5.71%",
-        "summary": "ASML(-4.88%), NXPI(-4.10%), KLAC(-8.06%) 등 주요 반도체주가 일제히 하락. 나스닥 -1.15% 마감",
-        "implication": "AI 랠리 과열 우려, 수급 악화",
-        "page": "B12",
-        "quote": "Arm Holdings trades at around 175 times projected earnings"
-      },
-      {
-        "tag": "QCOM",
-        "tagColor": "green",
-        "title": "Qualcomm 상대적 가치주",
-        "meta": "데이터센터 진출 +37% YTD +3%",
-        "summary": "Qualcomm은 데이터센터 고객 공개 후 주가 37% 급등. 다른 칩주 대비 PER 20.7배로 저평가. 자동차/IoT 사업 다각화",
-        "implication": "AI 칩 시장 진출로 인한 성장성 재평가",
-        "page": "B12",
-        "quote": "Qualcomm remains one of the cheapest chip stocks, trading at just over 20 times projected earnings"
-      },
-      {
-        "tag": "OXY",
+        "tag": "중국 AI",
         "tagColor": "blue",
-        "title": "에너지주 급락",
-        "meta": "이란 핵합의 체결로 유가 -5.82%",
-        "summary": "호르무즈 해협 개방 합의로 WTI -$4.70(-5.82%). 골드만삭스 브렌트유 연말 $80으로 하향조정",
-        "implication": "에너지 공급 리스크 완화, 인플레이션 압력 감소",
-        "page": "B11",
-        "quote": "Oil prices jumped this time, of course, but not by that much"
+        "title": "중국 Zhipu AI, 사이버보안 분야에서 Anthropic 따라잡다",
+        "meta": "GLM-5.2 모델 보안 벤치마크에서 경쟁",
+        "summary": "중국의 오픈웨이트 AI 모델이 미국 선도 모델과 사이버보안 능력에서 동등 수준 도달",
+        "implication": "미국의 AI 기술 우위 축소. 화이트하우스의 개발사 제한 정책에 대한 압박 증가",
+        "page": "A9",
+        "quote": "China is making sure that the gap becomes smaller and smaller over time"
       },
       {
-        "tag": "RIVN",
+        "tag": "CEO 보상",
         "tagColor": "red",
-        "title": "Rivian 대규모 구조조정",
-        "meta": "직원 수백명 감원, 전체의 2% 미만",
-        "summary": "Rivian이 R2 SUV 출시를 앞두고 구조조정 단행. 주가 -4.5%. 리스 가격 $829부터 시작으로 낮은 수용률 우려",
-        "implication": "R2의 낮은 리스 가격이 수익성 부담",
+        "title": "2025년 CEO 보상 사상 최고 기록",
+        "meta": "Elon Musk $158B, 100만 달러 초과 CEO 4년 만에 최다",
+        "summary": "Rick Smith(Axon) $164.4M으로 1위. 거의 모든 이익이 미실현 이득에서 비롯. CEO 보상이 직원 임금 대비 1894배",
+        "implication": "기업 경영진의 과도한 보상 구조. 주주와 경영진 이익의 불일치 심화",
         "page": "B2",
-        "quote": "Lease prices were revealed when the first R2 deliveries began last week"
-      }
-    ],
-    "korea": [
-      {
-        "tag": "이란 핵합의",
-        "tagColor": "green",
-        "title": "호르무즈 해협 개방 임박",
-        "meta": "즉시 효력 발생",
-        "summary": "미국-이란 전쟁 종료 합의로 이란 유가 즉시 판매 가능. 유가 -$4.70으로 급락. 미국은 즉시 이란 제재 완화 예고",
-        "implication": "국제유가 급락으로 수입 에너지비 감소 기대. 인플레이션 압력 완화",
-        "page": "A7",
-        "quote": "The provision for waivers of sanctions on oil sales takes effect immediately upon signing"
+        "quote": "CEOs making more than $100 million hit a four-year high in 2025"
       },
       {
-        "tag": "금리 결정",
-        "tagColor": "blue",
-        "title": "Fed 6월 회의 예정",
-        "meta": "6월 18일 2pm ET 발표",
-        "summary": "Fed 기준금리 결정 발표 예정. 시장 컨센서스는 동결(3.5-3.75%) 유지. Kevin Warsh 첫 의장 회의로 주목",
-        "implication": "향후 금리 인상 가능성 논쟁. 달러 약세 영향",
-        "page": "B12",
-        "quote": "Market odds have leaned toward the next Fed move being a rate increase"
-      },
-      {
-        "tag": "Olin-Huntsman 합병",
+        "tag": "항공사",
         "tagColor": "red",
-        "title": "화학업체 $2.43B 인수합병",
-        "meta": "Olin 주가 -6%, Huntsman -17%",
-        "summary": "Olin이 Huntsman을 $2.43B에 인수. 결합 매출 $12.5B. Olin 주가 $23.81로 하락. 2027년 1H 완료 예정",
-        "implication": "화학업 경기 둔화 우려, 구조 조정 시작",
-        "page": "B11",
-        "quote": "Olin and Huntsman said they have identified more than $300 million of cost synergies"
-      }
-    ],
-    "risk": {
-      "geoRisks": [
-        {
-          "emoji": "🌍",
-          "label": "이란-미국 전쟁 종료",
-          "level": "low"
-        },
-        {
-          "emoji": "⚠️",
-          "label": "중국 경기 둔화",
-          "level": "mid"
-        },
-        {
-          "emoji": "💥",
-          "label": "반도체 공급망 긴장",
-          "level": "mid"
-        }
-      ],
-      "bubbleChecks": [
-        {
-          "label": "SpaceX 과도한 밸류에이션 상승",
-          "level": "high",
-          "isNew": true
-        },
-        {
-          "label": "AI 칩 밸류에이션 괴리",
-          "level": "mid",
-          "isNew": false
-        },
-        {
-          "label": "기술주 집중도 과다",
-          "level": "high",
-          "isNew": false
-        }
-      ]
-    },
-    "sectors": [
-      {
-        "name": "반도체·AI",
-        "value": "-5.71%",
-        "up": false,
-        "barPct": 15
-      },
-      {
-        "name": "기술",
-        "value": "-1.2%",
-        "up": false,
-        "barPct": 25
-      },
-      {
-        "name": "금융",
-        "value": "+1.64%",
-        "up": true,
-        "barPct": 65
-      },
-      {
-        "name": "헬스케어",
-        "value": "N/A",
-        "up": true,
-        "barPct": 50
-      },
-      {
-        "name": "에너지",
-        "value": "-5.82%",
-        "up": false,
-        "barPct": 20
-      },
-      {
-        "name": "자동차",
-        "value": "-0.94%",
-        "up": false,
-        "barPct": 35
-      }
-    ],
-    "spotlight": [
-      {
-        "ticker": "SPCX",
-        "desc": "SpaceX IPO 이후 3거래일 연속 상승, $201.80 (+4.8%)",
-        "badge": "강세",
-        "color": "green"
-      },
-      {
-        "ticker": "NVDA",
-        "desc": "반도체주 약세, PHLX -5.71%",
-        "badge": "약세",
-        "color": "red"
-      },
-      {
-        "ticker": "OXY",
-        "desc": "이란 합의로 유가 -5.82%, 에너지주 급락",
-        "badge": "급락",
-        "color": "red"
-      },
-      {
-        "ticker": "QCOM",
-        "desc": "데이터센터 진출로 상대적 가치 재평가",
-        "badge": "기회",
-        "color": "blue"
-      }
-    ],
-    "macro": [
-      {
-        "date": "2026-06-17",
-        "dateNote": "6월 17일 (수)",
-        "dot": "#e24b4a",
-        "title": "SpaceX IPO 첫주 마감",
-        "sub": "기술주 회전매매, 나스닥 -1.15%",
-        "badgeText": "기술주 약세",
-        "badgeColor": "red"
-      },
-      {
-        "date": "2026-06-18",
-        "dateNote": "6월 18일 (목)",
-        "dot": "#378add",
-        "title": "Fed 기준금리 결정 발표",
-        "sub": "Kevin Warsh 의장 첫 회의, 동결 예상",
-        "badgeText": "금리 결정",
-        "badgeColor": "blue"
-      },
-      {
-        "date": "2026-06-19",
-        "dateNote": "6월 19일 (금)",
-        "dot": "#2ecc8a",
-        "title": "이란 핵합의 서명식",
-        "sub": "호르무즈 해협 개방 임박, 유가 안정화",
-        "badgeText": "지정학 해소",
-        "badgeColor": "green"
-      }
-    ]
-  },
-  {
-    "id": "d0610",
-    "label": "Jun 10 (Wed)",
-    "dot": "#e24b4a",
-    "summary": "나스닥 1% 하락으로 기술주 약세, 이란 긴장과 메모리칩 부족이 주요 리스크",
-    "market": [
-      {
-        "label": "NASDAQ",
-        "value": "25678.82",
-        "change": "-250.84",
-        "up": false
-      },
-      {
-        "label": "S&P 500",
-        "value": "7386.65",
-        "change": "-19.08",
-        "up": false
-      },
-      {
-        "label": "DOW",
-        "value": "50872.11",
-        "change": "+86.10",
-        "up": true
-      },
-      {
-        "label": "TQQQ",
-        "value": "N/A",
-        "change": "N/A",
-        "up": false
-      }
-    ],
-    "macroIndicators": [
-      {
-        "label": "달러인덱스(DXY)",
-        "value": "96.50",
-        "change": "+0.10",
-        "up": true,
-        "sub": "소폭 상승"
-      },
-      {
-        "label": "미10년 국채금리",
-        "value": "4.527%",
-        "change": "N/A",
-        "up": false,
-        "sub": "기준금리 유지 기조"
-      },
-      {
-        "label": "VIX 공포지수",
-        "value": "N/A",
-        "change": "N/A",
-        "up": false,
-        "sub": "기술주 약세로 변동성 증가"
-      },
-      {
-        "label": "WTI 유가",
-        "value": "$88.20",
-        "change": "-$3.10",
-        "up": false,
-        "sub": "이란 긴장에도 불구하고 약세"
-      }
-    ],
-    "koreaMarket": [
-      {
-        "label": "KOSPI",
-        "value": "N/A",
-        "change": "N/A",
-        "up": true
-      },
-      {
-        "label": "KOSDAQ",
-        "value": "N/A",
-        "change": "N/A",
-        "up": false
-      },
-      {
-        "label": "원/달러",
-        "value": "N/A",
-        "change": "N/A",
-        "up": false,
-        "sub": "달러 강세"
-      },
-      {
-        "label": "외국인 순매수",
-        "value": "N/A",
-        "change": "N/A",
-        "up": false
-      }
-    ],
-    "nasdaq": [
-      {
-        "tag": "기술주 약세",
-        "tagColor": "red",
-        "title": "나스닥 1% 하락",
-        "meta": "2026년 1월 이후 최대 낙폭",
-        "summary": "반도체·AI 주식 대량 매도로 나스닥이 1% 하락하며 기술주 약세 심화",
-        "implication": "AI 버블 우려와 메모리칩 부족이 투자심리 악화시킴",
+        "title": "프리미엄 항공사 좌석 인증 지연",
+        "meta": "KLM, Lufthansa 비즈니스 클래스 운항 연기",
+        "summary": "FAA와 EASA의 엄격한 안전 검증으로 프리미엄 좌석 인증 지연. 비용 상승 우려",
+        "implication": "항공사의 경쟁력 약화. 인증 절차 개선 필요",
         "page": "B1",
-        "quote": "S&P 500이 2.4% 떨어졌는데 주로 칩·AI 관련 종목의 낙폭 때문"
-      },
-      {
-        "tag": "메모리칩 부족",
-        "tagColor": "red",
-        "title": "Apple, 메모리 칩 부족으로 AI 롤아웃 차질",
-        "meta": "12GB DRAM 수급 부족",
-        "summary": "Apple이 온디바이스 AI를 강화하려 하지만 메모리칩 부족으로 장애물 직면",
-        "implication": "스마트폰 업체들의 AI 기능 탑재 지연 가능성 높음",
-        "page": "B16",
-        "quote": "Apple Intelligence는 12GB DRAM 최소 필요로 iPhone 모델 제한"
-      },
-      {
-        "tag": "이란 긴장",
-        "tagColor": "red",
-        "title": "미국, 이란 공습 감행",
-        "meta": "Apache 헬리콥터 격추 보복",
-        "summary": "미국이 호르무즈 해협 근처에서 Apache 헬기 격추에 대한 보복으로 이란 방공시설 공습",
-        "implication": "중동 지정학적 리스크 상승, 유가 변동성 증대",
-        "page": "A1",
-        "quote": "Centcom, 정당방위 성격의 비례 응전이라고 명시"
-      },
-      {
-        "tag": "SK Hynix 반등",
-        "tagColor": "green",
-        "title": "SK Hynix·삼성전자 급반등",
-        "meta": "월요일 낙폭 후 회복",
-        "summary": "월요일 AI 약세로 16%, 9% 내렸던 SK Hynix와 삼성전자가 화요일 급반등",
-        "implication": "메모리칩 수급 부족이 장기 가격 지지 요인",
-        "page": "B16",
-        "quote": "칩 업체들, 인공지능 주도 수요로 상승세 회복"
-      },
-      {
-        "tag": "Apple AI 제약",
-        "tagColor": "yellow",
-        "title": "Apple, Siri AI 메모리 병목 직면",
-        "meta": "12GB DRAM 최소 사양 요구",
-        "summary": "신규 Siri AI 기능이 고급 메모리를 필요로 해 iPhone 15 Pro 이후 모델만 지원 가능",
-        "implication": "Apple도 메모리 부족 영향받으며 기술 강화의 한계 노출",
-        "page": "B16",
-        "quote": "iPhone 시장의 DRAM 부족이 Apple의 AI 롤아웃 지연 유발"
+        "quote": "We have airplanes sitting for customers, completely done, waiting for seat certifications"
       }
     ],
     "korea": [
       {
-        "tag": "SK Hynix 급등",
+        "tag": "한국 증시",
         "tagColor": "green",
-        "title": "SK Hynix·삼성전자, 칩 수급 부족으로 급반등",
-        "meta": "메모리칩 가격 지지 강화",
-        "summary": "한국 반도체 업체들이 AI 인프라 수요와 메모리칩 부족으로 급반등, 글로벌 수급 타이트 심화",
-        "implication": "장기적 메모리 가격 상승세 지속 가능성 높음, 한국 반도체 산업 호재",
-        "page": "B16",
-        "quote": "SK Hynix 16%, 삼성전자 9% 상승하며 월요일 하락분 회복"
+        "title": "한국 반도체 주가 급등 후 변동성 확대",
+        "meta": "KOSPI 변동성 확대, Samsung, SK Hynix 레버리지 수급 영향",
+        "summary": "남한 소형주 선물 추적 ETF의 한국 주가 수급 왜곡. 레버리지 투자 폭증으로 변동성 심화",
+        "implication": "한국 반도체 산업의 국제적 지위 상승 이면의 가격 변동성 위험 노출",
+        "page": "A2",
+        "quote": "92% of holders are retail investors"
       },
       {
-        "tag": "KOSPI 방향성",
-        "tagColor": "blue",
-        "title": "Kospi 92% 상승 추세도 조정 신호",
-        "meta": "글로벌 기술주 약세의 영향",
-        "summary": "한국 기술주가 글로벌 나스닥 약세에 영향받을 가능성 높아, 일부 조정 불가피",
-        "implication": "반도체 주도 상승장이 구조적 조정국면 진입 조짐, 단기 변동성 증대 우려",
-        "page": "B15",
-        "quote": "Kospi 연초 92% 상승도 기술주 약세로 재조정 압박"
+        "tag": "중국 관세",
+        "tagColor": "yellow",
+        "title": "중국, 경제 압박에 대응 법안 준비",
+        "meta": "검찰 공익 소송 권한 확대 법안 검토 중",
+        "summary": "중국이 미국 제재에 대항하기 위해 해외 기업을 상대로 한 시민소송 권한 확대 추진",
+        "implication": "해외 기업의 중국 사업 리스크 증가. 미중 경제 갈등 심화",
+        "page": "A9",
+        "quote": "Beijing is preparing new legal tools for striking back against economic pressure from abroad"
       },
       {
-        "tag": "원/달러 강세",
-        "tagColor": "red",
-        "title": "달러 강세 추세 속 원화 약세 심화",
-        "meta": "달러인덱스 상승세 지속",
-        "summary": "글로벌 기술주 약세 속 달러 강세 기조 지속, 한국 원화의 약세 심화 예상",
-        "implication": "한국 수출기업의 수익성 개선에 부정적, 외국인 자본 이탈 압박",
-        "page": "A1",
-        "quote": "달러인덱스 상승으로 새흥국 통화 약세 심화 추세"
+        "tag": "스텔란티스",
+        "tagColor": "green",
+        "title": "스텔란티스, 일렉트릭 아이콘 출시로 일렉트릭 차량 라인업 강화",
+        "meta": "Wayve 자율주행 기술 탑재 Jeep 2028 계획",
+        "summary": "자율주행 기술을 통한 차량 신기능 제공. 스텔란티스의 전기차 및 자율주행 야심 반영",
+        "implication": "한국 자동차 산업의 국제 경쟁 심화. 기술 대응 필요",
+        "page": "B1",
+        "quote": "Stellantis committed to rolling out the technology across its brands from 2028"
       }
     ],
     "risk": {
       "geoRisks": [
         {
-          "emoji": "⚔️",
-          "label": "미국-이란 군사 충돌",
+          "emoji": "🇺🇸",
+          "label": "미국 정책 불확실성 (AI 수출 규제)",
           "level": "high"
         },
         {
-          "emoji": "🏭",
-          "label": "글로벌 반도체 수급 부족",
-          "level": "high"
-        },
-        {
-          "emoji": "📉",
-          "label": "AI 기술주 버블 우려",
-          "level": "mid"
-        }
-      ],
-      "bubbleChecks": [
-        {
-          "label": "S&P 500 상위 10대 종목 집중도 40% 근처 (1965년 이후 최고)",
-          "level": "high",
-          "isNew": true
-        },
-        {
-          "label": "나스닥 1일 낙폭 1% (경제호재 무시, 감정적 매도)",
-          "level": "mid",
-          "isNew": true
-        },
-        {
-          "label": "메모리칩 가격 급등으로 AI 기기 도입 지연 위험",
-          "level": "mid",
-          "isNew": false
-        }
-      ]
-    },
-    "sectors": [
-      {
-        "name": "반도체·AI",
-        "value": "-1.0%",
-        "up": false,
-        "barPct": 15
-      },
-      {
-        "name": "기술",
-        "value": "-1.2%",
-        "up": false,
-        "barPct": 12
-      },
-      {
-        "name": "금융",
-        "value": "+0.5%",
-        "up": true,
-        "barPct": 60
-      },
-      {
-        "name": "헬스케어",
-        "value": "-0.1%",
-        "up": false,
-        "barPct": 45
-      },
-      {
-        "name": "소비재",
-        "value": "+0.3%",
-        "up": true,
-        "barPct": 55
-      },
-      {
-        "name": "에너지",
-        "value": "-3.4%",
-        "up": false,
-        "barPct": 25
-      }
-    ],
-    "spotlight": [
-      {
-        "ticker": "AAPL",
-        "desc": "Apple, 메모리칩 부족으로 AI 전략 차질 우려",
-        "badge": "AI 제약",
-        "color": "red"
-      },
-      {
-        "ticker": "SK Hynix",
-        "desc": "SK Hynix·삼성전자 메모리칩 수급 부족으로 반등 강화",
-        "badge": "수급 타이트",
-        "color": "green"
-      },
-      {
-        "ticker": "SPY",
-        "desc": "S&P 500 상위 10대 종목 집중도 40% 근처 (1965년 이후 최고), 버블 우려",
-        "badge": "집중도 경고",
-        "color": "yellow"
-      },
-      {
-        "ticker": "USO",
-        "desc": "WTI 유가 -3.4% 하락, 이란 긴장에도 불구하고 약세 지속",
-        "badge": "수급 완화",
-        "color": "blue"
-      }
-    ],
-    "macro": [
-      {
-        "date": "2026-06-09",
-        "dateNote": "화요일",
-        "dot": "#e24b4a",
-        "title": "나스닥 1% 하락, 기술주 약세 심화",
-        "sub": "강한 고용지표에도 불구하고 감정적 매도",
-        "badgeText": "시장 신호",
-        "badgeColor": "red"
-      },
-      {
-        "date": "2026-06-10",
-        "dateNote": "수요일",
-        "dot": "#378add",
-        "title": "Social Security 신탁기금 고갈 2032년 4분기로 앞당겨짐",
-        "sub": "Trump 감세 후 수입 감소 + 저출산 + 이민 감소 영향",
-        "badgeText": "정책 리스크",
-        "badgeColor": "blue"
-      },
-      {
-        "date": "2026-06-10",
-        "dateNote": "수요일",
-        "dot": "#e24b4a",
-        "title": "이란 긴장 고조, 미군이 Apache 헬기 격추에 보복 공습",
-        "sub": "호르무즈 해협 긴장 고조, 유가 변동성 증대",
-        "badgeText": "지정학 위험",
-        "badgeColor": "red"
-      },
-      {
-        "date": "2026-05-31",
-        "dateNote": "토요일",
-        "dot": "#2ecc8a",
-        "title": "미국 5월 고용지표 강세, 기준금리 인상 시사",
-        "sub": "Strong jobs report 이후 금리 인상 가능성 부각, 모기지론 금리 상승 압박",
-        "badgeText": "인플레 우려",
-        "badgeColor": "yellow"
-      }
-    ]
-  },
-  {
-    "id": "d0622",
-    "label": "Jun 22 (Mon)",
-    "dot": "#2ecc8a",
-    "summary": "AI 수요로 메모리칩 품귀 심화, 애플도 제품 가격인상 추진",
-    "market": [
-      {
-        "label": "NASDAQ",
-        "value": "26517.93",
-        "change": "+629.09",
-        "up": true
-      },
-      {
-        "label": "S&P 500",
-        "value": "7500.58",
-        "change": "+69.12",
-        "up": true
-      },
-      {
-        "label": "DOW",
-        "value": "51564.70",
-        "change": "+362.44",
-        "up": true
-      },
-      {
-        "label": "TQQQ",
-        "value": "N/A",
-        "change": "N/A",
-        "up": true
-      }
-    ],
-    "macroIndicators": [
-      {
-        "label": "달러인덱스(DXY)",
-        "value": "100.74",
-        "change": "+1.00",
-        "up": true,
-        "sub": ""
-      },
-      {
-        "label": "미10년 국채금리",
-        "value": "4.450%",
-        "change": "-9/32",
-        "up": false,
-        "sub": ""
-      },
-      {
-        "label": "VIX 공포지수",
-        "value": "16.40",
-        "change": "-1.28",
-        "up": false,
-        "sub": ""
-      },
-      {
-        "label": "WTI 유가",
-        "value": "$76.60",
-        "change": "-$8.28",
-        "up": false,
-        "sub": ""
-      }
-    ],
-    "koreaMarket": [
-      {
-        "label": "KOSPI",
-        "value": "N/A",
-        "change": "N/A",
-        "up": true
-      },
-      {
-        "label": "KOSDAQ",
-        "value": "N/A",
-        "change": "N/A",
-        "up": true
-      },
-      {
-        "label": "원/달러",
-        "value": "1,527.12",
-        "change": "+6.0",
-        "up": false,
-        "sub": ""
-      },
-      {
-        "label": "외국인 순매수",
-        "value": "N/A",
-        "change": "N/A",
-        "up": true
-      }
-    ],
-    "nasdaq": [
-      {
-        "tag": "메모리칩 가격급등",
-        "tagColor": "red",
-        "title": "DRAM·NAND 가격 3배 이상 폭등",
-        "meta": "AI 수요 급증",
-        "summary": "메모리칩 부족으로 DRAM 가격이 1년 전 대비 3배 이상 급등. SK하이닉스, 삼성전자, 마이크론의 시가총액이 각각 1조 달러 이상으로 급등",
-        "implication": "AI 인프라 투자 과열에 따른 메모리칩 공급 부족이 구조적 문제로 부상. 소비자 기기 가격 인상 우려",
-        "page": "B1, B4",
-        "quote": "There's less supply at a time when consumers want devices and the memory guys are passing along huge price increases"
-      },
-      {
-        "tag": "애플 가격인상",
-        "tagColor": "red",
-        "title": "Apple, 메모리칩 부족으로 제품 가격 인상 결정",
-        "meta": "팀 쿡 CEO 발표",
-        "summary": "애플이 메모리칩 가격 급등으로 더 이상 가격 인상을 미룰 수 없다고 발표. 아이폰 등 주요 제품 가격 인상 예상",
-        "implication": "세계 최대 기업도 조절 불가능한 수준의 원가 상승. 소비자 물가 지수에 영향 가능성",
-        "page": "B1, B4, B7",
-        "quote": "The situation has become unsustainable. There's less supply at a time when consumers want devices"
-      },
-      {
-        "tag": "박스오피스 호조",
-        "tagColor": "green",
-        "title": "'Toy Story 5', 전 세계 3억 1200만 달러 오프닝",
-        "meta": "픽사 최고 흥행",
-        "summary": "디즈니의 '토이스토리 5'가 전 세계 개봉 첫 주말 3억 1200만 달러 기록. 팬데믹 이후 할리우드 박스오피스 회복",
-        "implication": "영화관 수익성 회복. 가족 친화적 콘텐츠 수요 강세",
-        "page": "A1, A2, B2",
-        "quote": "Toy Story 5 opened to an estimated $312 million globally, the second-best debut for a Pixar animated film"
-      },
-      {
-        "tag": "코카콜라 세금분쟁",
-        "tagColor": "yellow",
-        "title": "코카콜라 vs IRS, 200억 달러 세금분쟁 항소심 진행 중",
-        "meta": "외국 이윤 조정",
-        "summary": "코카콜라와 미국 국세청이 외국 자회사 이윤 배분 문제로 200억 달러 이상 규모의 세금분쟁을 벌이고 있음. 항소법원 이번 주 심리",
-        "implication": "다국적 기업의 조세회피 문제에 대한 규제 강화 가능성. 다른 IT·제약사들도 유사 감시 대상",
-        "page": "B1, B2",
-        "quote": "If Coke loses, however, it faces a bill for back taxes and interest that is larger than the company's net income from 2025"
-      }
-    ],
-    "korea": [
-      {
-        "tag": "삼성·SK하이닉스",
-        "tagColor": "blue",
-        "title": "반도체 가격 폭등으로 한국 메모리칩 업체 실적 개선",
-        "meta": "메모리칩 슈퍼사이클",
-        "summary": "AI 수요 급증으로 DRAM·NAND 가격이 급등하면서 SK하이닉스, 삼성전자의 시가총액이 각각 1조 달러를 넘어섬",
-        "implication": "한국 반도체 업계 호황. 하지만 중국 경쟁사(CXMT, 양쯔메모리) 확대 압박 우려",
-        "page": "B4",
-        "quote": "SK Hynix and Micron both roughly quintupling to more than $1 trillion each in the past six months"
-      },
-      {
-        "tag": "메모리칩 공급 부족",
-        "tagColor": "red",
-        "title": "국내 반도체 수출 단가 상승에도 물량 문제 해소 어려워",
-        "meta": "공급 제약",
-        "summary": "메모리칩 생산 용량 확대에 2~3년 소요. 중국 반도체 제조사 참여 제한으로 공급 부족 심화",
-        "implication": "한국 메모리칩 업체는 가격 인상 이득, 하지만 미국의 중국 규제로 인한 리스크 존재",
-        "page": "B4",
-        "quote": "Semiconductor factories take billions of dollars and generally take two to three years to build"
-      },
-      {
-        "tag": "원화 약세",
-        "tagColor": "yellow",
-        "title": "원/달러 1,527원까지 약세",
-        "meta": "수출업체 호조",
-        "summary": "달러 강세와 원화 약세로 한국 수출 기업들의 환율 이득 확대",
-        "implication": "반도체·자동차 등 주요 수출품 가격 경쟁력 강화",
-        "page": "B5",
-        "quote": "Won vs Dollar weakening to 1,527.12"
-      }
-    ],
-    "risk": {
-      "geoRisks": [
-        {
-          "emoji": "🌍",
-          "label": "미·이란 협상 변동성",
+          "emoji": "🇮🇷",
+          "label": "이란-미국 해협 분쟁 (호르무즈 해협)",
           "level": "high"
         },
         {
           "emoji": "🇨🇳",
-          "label": "중국 반도체 규제 강화",
-          "level": "high"
-        },
-        {
-          "emoji": "⚔️",
-          "label": "인플레이션 상승 압력",
+          "label": "중국 보복 관세 및 법제화",
           "level": "mid"
         }
       ],
       "bubbleChecks": [
         {
-          "label": "AI 투자 과열 우려",
+          "label": "AI/반도체 주가 변동성 고점",
           "level": "high",
           "isNew": true
         },
         {
-          "label": "멀티플 확장 한계",
+          "label": "레버리지 투자 상품 폭증",
           "level": "mid",
           "isNew": false
         },
         {
-          "label": "채권 수익률 회복 저항",
+          "label": "메모리 칩 가격 거품 우려",
           "level": "mid",
-          "isNew": false
+          "isNew": true
         }
       ]
     },
     "sectors": [
       {
         "name": "반도체·AI",
-        "value": "UP",
+        "value": "상승",
         "up": true,
         "barPct": 85
       },
       {
         "name": "기술",
-        "value": "UP",
-        "up": true,
-        "barPct": 80
-      },
-      {
-        "name": "금융",
-        "value": "UP",
-        "up": true,
-        "barPct": 60
-      },
-      {
-        "name": "헬스케어",
-        "value": "DOWN",
+        "value": "하락",
         "up": false,
         "barPct": 40
       },
       {
-        "name": "소비재",
-        "value": "UP",
+        "name": "금융",
+        "value": "상승",
+        "up": true,
+        "barPct": 75
+      },
+      {
+        "name": "헬스케어",
+        "value": "상승",
         "up": true,
         "barPct": 65
       },
       {
-        "name": "에너지",
-        "value": "DOWN",
+        "name": "소비재",
+        "value": "하락",
         "up": false,
-        "barPct": 25
+        "barPct": 35
+      },
+      {
+        "name": "에너지",
+        "value": "하락",
+        "up": false,
+        "barPct": 30
       }
     ],
     "spotlight": [
       {
-        "ticker": "APPLE",
-        "desc": "메모리칩 가격 상승으로 제품 가격 인상 발표",
-        "badge": "⚠️ 비용압박",
+        "ticker": "MU",
+        "desc": "Micron 분기 매출 $18B, 메모리 칩 가격 대폭 인상",
+        "badge": "메모리 칩",
+        "color": "green"
+      },
+      {
+        "ticker": "NVDA",
+        "desc": "AI 칩 가격 상승으로 비용 부담 증가, 주가 -8.62%",
+        "badge": "AI 칩 가격 부담",
         "color": "red"
       },
       {
-        "ticker": "SK HYNIX / SAMSUNG",
-        "desc": "메모리칩 가격 폭등으로 실적 개선",
-        "badge": "📈 수혜주",
-        "color": "green"
-      },
-      {
-        "ticker": "DISNEY",
-        "desc": "'Toy Story 5' 전 세계 3.1억 달러 오프닝 기록",
-        "badge": "🎬 흥행",
-        "color": "green"
-      },
-      {
-        "ticker": "COCA-COLA",
-        "desc": "IRS와 200억 달러 세금분쟁 항소심 진행",
-        "badge": "⚖️ 리스크",
+        "ticker": "MSTR",
+        "desc": "SoftBank Son, Musk의 우주 데이터센터 계획에 회의적",
+        "badge": "AI 인프라 전략",
         "color": "yellow"
+      },
+      {
+        "ticker": "DIS",
+        "desc": "D'Amaro CEO 100일 임기, 구조 조정 및 속도 개선 추진",
+        "badge": "경영 변화",
+        "color": "blue"
       }
     ],
     "macro": [
       {
-        "date": "2026-06-22",
+        "date": "06/28",
         "dateNote": "지난주 마감",
-        "dot": "#2ecc8a",
-        "title": "S&P 500 기록 경신, AI 붐에 힘입어",
-        "sub": "NASDAQ +2.43%, DOW +0.71%",
-        "badgeText": "상승장",
-        "badgeColor": "green"
-      },
-      {
-        "date": "2026-06",
-        "dateNote": "최근 이슈",
         "dot": "#e24b4a",
-        "title": "메모리칩 가격 3배 폭등, 소비자 물가 영향 우려",
-        "sub": "DRAM 가격 1년 전 대비 183% 상승",
-        "badgeText": "인플레이션",
+        "title": "S&P 500 -1.95%, 나스닥 -4.60%",
+        "sub": "기술주 회락으로 대폭 하락",
+        "badgeText": "약세",
         "badgeColor": "red"
       },
       {
-        "date": "2026-06",
-        "dateNote": "밸류에이션 우려",
+        "date": "06/29",
+        "dateNote": "현재",
         "dot": "#378add",
-        "title": "S&P 500 멀티플 22배, 채권 수익률과의 스프레드 축소",
-        "sub": "Excess CAPE Yield 1.3% (10년 최저 수준)",
-        "badgeText": "주의",
+        "title": "미10년 국채금리 4.372%, 달러 강세 지속",
+        "sub": "금리 안정세, 달러 101.37",
+        "badgeText": "중립",
+        "badgeColor": "blue"
+      },
+      {
+        "date": "07/01",
+        "dateNote": "예정",
+        "dot": "#2ecc8a",
+        "title": "미 독립기념일 장중 마감, 6월 미 고용 통계 발표",
+        "sub": "고용 통계로 금리 정책 영향 분석 예상",
+        "badgeText": "통계 발표",
         "badgeColor": "yellow"
+      },
+      {
+        "date": "06/30",
+        "dateNote": "예정",
+        "dot": "#2ecc8a",
+        "title": "시카고 PMI, 소비자 신뢰도 지수 발표",
+        "sub": "제조업 경기와 소비 심리 점검",
+        "badgeText": "경제 지표",
+        "badgeColor": "blue"
       }
     ]
   },
