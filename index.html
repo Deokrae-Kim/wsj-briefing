@@ -424,52 +424,90 @@ function renderFiltered(d, profile) {
 
 function renderRawTable(d) {
   const wrap = document.createElement('div');
-  const allArticles = [...(d.nasdaq||[]).map(a=>({...a,_sec:'미국'})), ...(d.korea||[]).map(a=>({...a,_sec:'한국·북한'}))];
 
-  // Search bar
-  const searchWrap = document.createElement('div');
-  searchWrap.style.cssText='margin-bottom:10px;';
-  searchWrap.innerHTML=`<input id="rawSearch" type="text" placeholder="검색 (제목, 요약, 태그...)" style="width:100%;background:var(--bg3);border:1px solid var(--border2);color:var(--text);border-radius:6px;padding:7px 10px;font-size:12px;">`;
-  wrap.appendChild(searchWrap);
+  // rawArticles 있으면 우선 사용, 없으면 nasdaq+korea fallback
+  const hasRaw = d.rawArticles && d.rawArticles.length > 0;
+  const allArticles = hasRaw
+    ? d.rawArticles.map(a => ({...a, _sec: a.section||'', _title: a.title, _summary: a.summary, _quote: a.quote, _topics: a.topics||[], _tickers: a.tickers||[], _tag: (a.topics||[])[0]||''}))
+    : [...(d.nasdaq||[]).map(a=>({...a,_sec:'미국',_title:a.title,_summary:a.summary,_quote:a.quote,_topics:[],_tickers:[],_tag:a.tag})),
+       ...(d.korea||[]).map(a=>({...a,_sec:'한국·북한',_title:a.title,_summary:a.summary,_quote:a.quote,_topics:[],_tickers:[],_tag:a.tag}))];
+
+  const countLabel = hasRaw
+    ? `📋 PDF 전체 기사 RAW 데이터 — ${allArticles.length}개`
+    : `📋 요약 기사 (전체 RAW는 PDF 재분석 필요) — ${allArticles.length}개`;
+
+  const header = document.createElement('div');
+  header.style.cssText='font-size:11px;color:var(--text3);margin-bottom:10px;';
+  header.textContent = countLabel;
+  wrap.appendChild(header);
+
+  // 감성 배지
+  const sentBadge = {bullish:'<span style="font-size:10px;font-weight:500;padding:1px 7px;border-radius:4px;background:rgba(46,204,138,.15);color:#27500a;">강세</span>',bearish:'<span style="font-size:10px;font-weight:500;padding:1px 7px;border-radius:4px;background:rgba(226,75,74,.15);color:#791f1f;">약세</span>',neutral:'<span style="font-size:10px;font-weight:500;padding:1px 7px;border-radius:4px;background:rgba(244,239,232,.8);color:#444441;">중립</span>'};
+
+  // 필터 바
+  const filterWrap = document.createElement('div');
+  filterWrap.style.cssText='display:flex;gap:6px;margin-bottom:8px;';
+  filterWrap.innerHTML=`
+    <input id="rawSearch" type="text" placeholder="검색..." style="flex:1;background:var(--bg3);border:1px solid var(--border2);color:var(--text);border-radius:6px;padding:6px 10px;font-size:12px;">
+    <select id="rawSentFilter" style="background:var(--bg3);border:1px solid var(--border2);color:var(--text);border-radius:6px;padding:6px 8px;font-size:12px;">
+      <option value="">감성 전체</option>
+      <option value="bullish">강세</option>
+      <option value="bearish">약세</option>
+      <option value="neutral">중립</option>
+    </select>`;
+  wrap.appendChild(filterWrap);
 
   const stats = document.createElement('div');
-  stats.style.cssText='font-size:11px;color:var(--text3);margin-bottom:8px;';
+  stats.style.cssText='font-size:11px;color:var(--text3);margin-bottom:6px;';
   wrap.appendChild(stats);
 
   const tableWrap = document.createElement('div');
   tableWrap.style.cssText='overflow-x:auto;';
   wrap.appendChild(tableWrap);
 
-  function renderTable(filter='') {
-    const filtered = filter ? allArticles.filter(a => {
-      const hay = [a.title, a.summary, a.tag, a.implication].join(' ').toLowerCase();
-      return hay.includes(filter.toLowerCase());
-    }) : allArticles;
-    stats.textContent = `${filtered.length}개 기사 (전체 ${allArticles.length}개)`;
+  function renderTable() {
+    const q = filterWrap.querySelector('#rawSearch').value.toLowerCase();
+    const sent = filterWrap.querySelector('#rawSentFilter').value;
+    const filtered = allArticles.filter(a => {
+      if (sent && a.sentiment !== sent) return false;
+      if (q) {
+        const hay = [a._title, a._summary, a._quote, ...(a._topics||[]), ...(a._tickers||[])].join(' ').toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+    stats.innerHTML = `<b style="color:var(--accent)">${filtered.length}</b>개 표시 / 전체 ${allArticles.length}개`;
     tableWrap.innerHTML = `<table style="width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed;">
       <thead><tr style="border-bottom:1px solid var(--border);">
-        <th style="width:55px;padding:7px 8px;text-align:left;font-size:11px;color:var(--text3);">섹션</th>
-        <th style="padding:7px 8px;text-align:left;font-size:11px;color:var(--text3);">제목 / 요약</th>
-        <th style="width:55px;padding:7px 8px;text-align:left;font-size:11px;color:var(--text3);">태그</th>
+        <th style="width:50px;padding:6px 8px;text-align:left;font-size:11px;color:var(--text3);">면</th>
+        <th style="width:60px;padding:6px 8px;text-align:left;font-size:11px;color:var(--text3);">섹션</th>
+        <th style="padding:6px 8px;text-align:left;font-size:11px;color:var(--text3);">제목 / 요약</th>
+        <th style="width:120px;padding:6px 8px;text-align:left;font-size:11px;color:var(--text3);">태그</th>
+        <th style="width:48px;padding:6px 8px;text-align:left;font-size:11px;color:var(--text3);">감성</th>
       </tr></thead>
-      <tbody>${filtered.map(a=>`
-        <tr style="border-bottom:1px solid var(--border);" onclick="this.querySelector('.raw-detail').style.display=this.querySelector('.raw-detail').style.display==='none'?'block':'none'">
-          <td style="padding:8px;vertical-align:top;"><span style="display:inline-block;font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;background:rgba(55,138,221,.15);color:var(--blue);white-space:nowrap;">${a._sec}</span></td>
-          <td style="padding:8px;vertical-align:top;cursor:pointer;">
-            <div style="font-size:12px;font-weight:600;color:var(--text);line-height:1.4;margin-bottom:3px;">${a.title}</div>
-            <div style="font-size:11px;color:var(--text2);line-height:1.5;">${a.summary}</div>
-            <div class="raw-detail" style="display:none;margin-top:8px;">
-              <div style="font-size:11px;color:var(--accent);background:rgba(91,106,247,.08);border-radius:6px;padding:8px;border-left:2px solid var(--accent);margin-bottom:6px;">💡 ${a.implication}</div>
-              ${a.page?`<div style="font-size:10px;color:var(--text3);margin-bottom:4px;">📄 ${a.page}</div>`:''}
-              ${a.quote?`<div style="font-size:11px;color:var(--text3);font-style:italic;border-left:2px solid var(--border2);padding-left:6px;">${a.quote}</div>`:''}
+      <tbody>${filtered.map(a=>{
+        const topicTags=(a._topics||[]).map(t=>`<span style="display:inline-block;font-size:9px;padding:1px 5px;border-radius:3px;margin:1px;background:#e1f5ee;color:#085041;">${t}</span>`).join('');
+        const tickerTags=(a._tickers||[]).map(t=>`<span style="display:inline-block;font-size:9px;padding:1px 5px;border-radius:3px;margin:1px;background:#eeedfe;color:#3c3489;">${t}</span>`).join('');
+        return `<tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:8px;vertical-align:top;"><span style="font-size:10px;font-weight:600;padding:2px 6px;border-radius:4px;background:rgba(55,138,221,.15);color:var(--blue);">${a.page||a._sec||''}</span></td>
+          <td style="padding:8px;vertical-align:top;font-size:10px;color:var(--text3);">${a._sec||''}</td>
+          <td style="padding:8px;vertical-align:top;cursor:pointer;" onclick="const d=this.querySelector('.rd');d.style.display=d.style.display==='none'?'block':'none'">
+            <div style="font-size:12px;font-weight:500;color:var(--text);line-height:1.4;margin-bottom:3px;">${a._title||''}</div>
+            <div style="font-size:11px;color:var(--text2);line-height:1.5;">${a._summary||''}</div>
+            <div class="rd" style="display:none;margin-top:6px;">
+              ${a.implication?`<div style="font-size:11px;color:var(--accent);background:rgba(91,106,247,.08);border-radius:6px;padding:8px;border-left:2px solid var(--accent);margin-bottom:6px;border-radius:0;">💡 ${a.implication}</div>`:''}
+              ${a._quote?`<div style="font-size:10px;color:var(--text3);font-style:italic;border-left:2px solid var(--border2);padding-left:6px;border-radius:0;">${a._quote}</div>`:''}
             </div>
           </td>
-          <td style="padding:8px;vertical-align:top;"><span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;background:rgba(46,204,138,.12);color:var(--green);white-space:nowrap;">${a.tag}</span></td>
-        </tr>`).join('')}
+          <td style="padding:8px;vertical-align:top;">${topicTags}${tickerTags}</td>
+          <td style="padding:8px;vertical-align:top;">${sentBadge[a.sentiment]||sentBadge['neutral']}</td>
+        </tr>`;
+      }).join('')}
       </tbody></table>`;
   }
 
-  searchWrap.querySelector('#rawSearch').addEventListener('input', e => renderTable(e.target.value));
+  filterWrap.querySelector('#rawSearch').addEventListener('input', renderTable);
+  filterWrap.querySelector('#rawSentFilter').addEventListener('change', renderTable);
   renderTable();
   return wrap;
 }
@@ -495,14 +533,17 @@ async function analyzeFile(file, isLast) {
   try {
     const base64 = await toBase64(file);
     const tempId = 'd_'+Date.now();
-    const prompt = `WSJ PDF를 분석해서 아래 JSON 형식으로 반환해줘. 순수 JSON만.
+
+    // ── 1단계: 시장 데이터 + 요약 ──
+    setStatus('1단계: 시장 데이터 분석 중...', true);
+    const prompt1 = `WSJ PDF를 분석해서 아래 JSON 형식으로 반환해줘. 순수 JSON만.
 id와 label은 PDF 안의 실제 날짜 사용. id형식:"d0708", label형식:"Jul 8 (Tue)".
 {"id":"d0708","label":"Jul 8 (Tue)","dot":"#e24b4a","summary":"핵심한줄",
 "market":[{"label":"NASDAQ","value":"","change":"","up":true},{"label":"S&P 500","value":"","change":"","up":true},{"label":"DOW","value":"","change":"","up":true},{"label":"TQQQ","value":"","change":"","up":true}],
 "macroIndicators":[{"label":"달러인덱스(DXY)","value":"","change":"","up":true,"sub":""},{"label":"미10년 국채금리","value":"","change":"","up":false,"sub":""},{"label":"VIX 공포지수","value":"","change":"","up":false,"sub":""},{"label":"WTI 유가","value":"","change":"","up":true,"sub":""}],
 "koreaMarket":[{"label":"KOSPI","value":"","change":"","up":true},{"label":"KOSDAQ","value":"","change":"","up":true},{"label":"원/달러","value":"","change":"","up":false,"sub":""},{"label":"외국인 순매수","value":"","change":"","up":true}],
-"nasdaq":[{"tag":"","tagColor":"blue","title":"","meta":"","summary":"","implication":"","page":"","quote":""}],
-"korea":[{"tag":"","tagColor":"green","title":"","meta":"","summary":"","implication":"","page":"","quote":""}],
+"nasdaq":[{"tag":"","tagColor":"blue","title":"","meta":"","summary":"","implication":"","page":"p.A1","quote":""}],
+"korea":[{"tag":"","tagColor":"green","title":"","meta":"","summary":"","implication":"","page":"p.A6","quote":""}],
 "risk":{"geoRisks":[{"emoji":"🌍","label":"","level":"high"}],"bubbleChecks":[{"label":"","level":"mid","isNew":false}]},
 "sectors":[{"name":"반도체·AI","value":"","up":true,"barPct":50},{"name":"기술","value":"","up":true,"barPct":50},{"name":"금융","value":"","up":true,"barPct":50},{"name":"헬스케어","value":"","up":true,"barPct":50},{"name":"소비재","value":"","up":true,"barPct":50},{"name":"에너지","value":"","up":true,"barPct":50}],
 "spotlight":[{"ticker":"","desc":"","badge":"","color":"green"},{"ticker":"","desc":"","badge":"","color":"red"},{"ticker":"","desc":"","badge":"","color":"yellow"},{"ticker":"","desc":"","badge":"","color":"blue"}],
@@ -512,22 +553,69 @@ dot: 하락장=#e24b4a, 상승장=#2ecc8a, 중립=#378add.
 ⚠️ 수치는 PDF에 있는 것만. 없으면 value를 "N/A"로. market/macroIndicators/koreaMarket은 위 4개 label만 사용.
 순수JSON만 반환.`;
 
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res1 = await fetch('https://api.anthropic.com/v1/messages', {
       method:'POST',
       headers:{'Content-Type':'application/json','x-api-key':ANT_KEY,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
-      body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:6000,system:'WSJ 투자 분석 전문가. 순수 JSON만 반환.',messages:[{role:'user',content:[{type:'document',source:{type:'base64',media_type:'application/pdf',data:base64}},{type:'text',text:prompt}]}]})
+      body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:6000,system:'WSJ 투자 분석 전문가. 순수 JSON만 반환.',messages:[{role:'user',content:[{type:'document',source:{type:'base64',media_type:'application/pdf',data:base64}},{type:'text',text:prompt1}]}]})
     });
-    const data = await res.json();
-    if (data.error) throw new Error(data.error.message);
-    const raw = data.content?.map(c=>c.text||'').join('').trim();
-    const match = raw.match(/\{[\s\S]*\}/);
-    if (!match) throw new Error('JSON 없음: '+raw.slice(0,80));
-    const parsed = JSON.parse(match[0]);
+    const data1 = await res1.json();
+    if (data1.error) throw new Error('1단계 오류: '+data1.error.message);
+    const raw1 = data1.content?.map(c=>c.text||'').join('').trim();
+    const match1 = raw1.match(/\{[\s\S]*\}/);
+    if (!match1) throw new Error('1단계 JSON 없음');
+    const parsed = JSON.parse(match1[0]);
     if (!parsed.id || parsed.id==='d0708') parsed.id=tempId;
     if (BRIEFING_DATA.find(x=>x.id===parsed.id)) parsed.id+=('_'+Date.now());
+
+    // 1단계 결과 먼저 화면에 표시
     BRIEFING_DATA.unshift(parsed);
     renderSidebar();
     showBriefing(parsed.id);
+
+    // ── 2단계: 전체 기사 RAW 추출 ──
+    setStatus('2단계: 전체 기사 추출 중...', true);
+    const prompt2 = `WSJ PDF에서 모든 기사를 빠짐없이 추출해줘. 광고·주식시세표·날씨는 제외. 순수 JSON 배열만 반환.
+[
+  {
+    "page": "A1",
+    "section": "섹션명 (U.S. NEWS, WORLD NEWS, BUSINESS, OPINION, SPORTS, PERSONAL JOURNAL, ARTS 중 하나)",
+    "title": "기사 헤드라인 (영문 원문 그대로)",
+    "summary": "3~4줄 한국어 요약",
+    "quote": "PDF에서 가장 핵심적인 영문 문장 1개 (원문 그대로)",
+    "topics": ["주제태그1", "주제태그2"],
+    "tickers": ["관련티커1", "관련티커2"],
+    "sentiment": "bullish 또는 bearish 또는 neutral"
+  }
+]
+⚠️ 규칙:
+- 신문에 실린 모든 기사를 포함 (A1~A16, B1~B10 전부)
+- 각 기사의 헤드라인은 영문 원문 그대로
+- topics는 한국어로 (AI, 반도체, 지정학, 이란전쟁, NATO, 방산, 에너지, 금융, 빅테크, 소비재, 암호화폐, 자동차, 미디어, 스포츠, 정치, 부동산, 한국시장 등)
+- tickers는 관련 미국·한국 종목 코드
+- 순수 JSON 배열만 반환, 다른 텍스트 없음`;
+
+    const res2 = await fetch('https://api.anthropic.com/v1/messages', {
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-api-key':ANT_KEY,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+      body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:8000,system:'WSJ 기사 추출 전문가. 순수 JSON 배열만 반환.',messages:[{role:'user',content:[{type:'document',source:{type:'base64',media_type:'application/pdf',data:base64}},{type:'text',text:prompt2}]}]})
+    });
+    const data2 = await res2.json();
+    if (!data2.error) {
+      const raw2 = data2.content?.map(c=>c.text||'').join('').trim();
+      const match2 = raw2.match(/\[[\s\S]*\]/);
+      if (match2) {
+        try {
+          const rawArticles = JSON.parse(match2[0]);
+          // 기존 데이터에 rawArticles 추가
+          const idx = BRIEFING_DATA.findIndex(x=>x.id===parsed.id);
+          if (idx !== -1) {
+            BRIEFING_DATA[idx].rawArticles = rawArticles;
+            showBriefing(parsed.id); // 화면 갱신
+          }
+        } catch(e) { console.warn('2단계 파싱 실패:', e); }
+      }
+    }
+
     if (isLast) {
       setStatus('GitHub에 저장 중...', true);
       await saveToGitHub();
