@@ -45,7 +45,13 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Segoe UI'
 .sidebar-inner{flex:1;overflow-y:auto;padding:10px 8px;}
 .sidebar-inner::-webkit-scrollbar{width:3px;}
 .sidebar-inner::-webkit-scrollbar-thumb{background:var(--border2);}
-.sidebar-section-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;padding:8px 8px 6px;font-weight:600;}
+/* SIDEBAR SORT */
+.sidebar-sort{display:flex;align-items:center;justify-content:space-between;padding:8px 8px 4px;}
+.sidebar-sort-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;font-weight:600;}
+.sidebar-sort-btn{display:flex;gap:2px;}
+.sort-opt{font-size:9px;padding:2px 7px;border-radius:3px;cursor:pointer;color:var(--text3);border:1px solid transparent;transition:all .12s;}
+.sort-opt.active{background:rgba(91,106,247,.15);color:var(--accent);border-color:rgba(91,106,247,.25);}
+.sort-opt:hover:not(.active){color:var(--text2);}
 
 /* SIDEBAR DROP ZONE */
 .sidebar-drop{margin:8px 8px;border:1.5px dashed var(--accent);border-radius:var(--radius);padding:14px 10px;cursor:pointer;transition:border-color .15s,background .15s;text-align:center;flex-shrink:0;background:rgba(91,106,247,.05);}
@@ -229,7 +235,13 @@ body{background:var(--bg);color:var(--text);font-family:-apple-system,'Segoe UI'
   </div>
   <input type="file" id="fileInput" accept=".pdf" multiple onchange="handleFiles([...this.files])">
   <div class="sidebar-inner" id="sidebarInner">
-    <div class="sidebar-section-label">브리핑 목록</div>
+    <div class="sidebar-sort">
+      <span class="sidebar-sort-label">브리핑 목록</span>
+      <div class="sidebar-sort-btn">
+        <span class="sort-opt active" id="sortDesc" onclick="setSortOrder('desc')">최신순</span>
+        <span class="sort-opt" id="sortAsc" onclick="setSortOrder('asc')">오래된순</span>
+      </div>
+    </div>
     <div class="sidebar-empty" id="sidebarEmpty">
       PDF를 업로드하면<br>여기에 날짜별로<br>목록이 쌓입니다
     </div>
@@ -405,12 +417,7 @@ async function init() {
   BRIEFING_DATA.push(...remoteData);
 
   // 날짜 내림차순 정렬 (최신이 위)
-  BRIEFING_DATA.sort((a, b) => {
-    const idA = a.id.replace(/[^0-9]/g, '').slice(0, 8);
-    const idB = b.id.replace(/[^0-9]/g, '').slice(0, 8);
-    return idB.localeCompare(idA);
-  });
-  BRIEFING_DATA.forEach(d => addToSidebar(d));
+  renderSidebar();
   if (BRIEFING_DATA.length > 0) {
     switchDate(BRIEFING_DATA[0].id);
     setStatus('', false);
@@ -423,7 +430,28 @@ async function init() {
   setInterval(fetchLiveTicker, 60000);
 }
 
-function addToSidebar(d, prepend=false) {
+let SORT_ORDER = 'desc'; // 기본: 최신순
+
+function setSortOrder(order) {
+  SORT_ORDER = order;
+  document.getElementById('sortDesc').classList.toggle('active', order === 'desc');
+  document.getElementById('sortAsc').classList.toggle('active', order === 'asc');
+  renderSidebar();
+}
+
+function sortData(data) {
+  return [...data].sort((a, b) => {
+    const idA = a.id.replace(/[^0-9]/g, '').slice(0, 8);
+    const idB = b.id.replace(/[^0-9]/g, '').slice(0, 8);
+    return SORT_ORDER === 'desc' ? idB.localeCompare(idA) : idA.localeCompare(idB);
+  });
+}
+
+function renderSidebar() {
+  const inner = document.getElementById('sidebarInner');
+  inner.querySelectorAll('.sidebar-item').forEach(el => el.remove());
+  sortData(BRIEFING_DATA).forEach(d => addToSidebar(d));
+}
   const empty = document.getElementById('sidebarEmpty');
   if (empty) empty.remove();
 
@@ -653,7 +681,7 @@ async function handleFile(file, isLast = true) {
 
 중요: id와 label은 PDF 안에 있는 실제 날짜를 사용해줘.
 - id 형식: "d월월일일" (예: 6월 8일이면 "d0608", 6월 23일이면 "d0623")
-- label 형식: "Jun 8 (월)" 처럼 영문 월 + 일 + 한글 요일
+- label 형식: "Jun 8 (Mon)" 처럼 영문 월 + 일 + 영문 요일 약자 (Mon/Tue/Wed/Thu/Fri/Sat/Sun)
 
 {
   "id": "d0608",
@@ -755,16 +783,7 @@ macroIndicators의 미10년금리·VIX는 up:false가 투자자에게 나쁜 방
     if (BRIEFING_DATA.find(x => x.id === parsed.id)) parsed.id = parsed.id + '_' + Date.now();
 
     BRIEFING_DATA.unshift(parsed);
-    // 날짜 내림차순 재정렬
-    BRIEFING_DATA.sort((a, b) => {
-      const idA = a.id.replace(/[^0-9]/g, '').slice(0, 8);
-      const idB = b.id.replace(/[^0-9]/g, '').slice(0, 8);
-      return idB.localeCompare(idA);
-    });
-    // 사이드바 전체 다시 그리기
-    const inner = document.getElementById('sidebarInner');
-    inner.querySelectorAll('.sidebar-item').forEach(el => el.remove());
-    BRIEFING_DATA.forEach(d => addToSidebar(d));
+    renderSidebar();
     switchDate(parsed.id);
 
     if (isLast) {
