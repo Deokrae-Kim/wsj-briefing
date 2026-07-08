@@ -2586,21 +2586,12 @@ async function saveToGitHub(allData) {
 
 /* ── INIT ── */
 function init() {
-  setStatus('브리핑 불러오는 중...', true);
-  const remoteData = await loadFromGitHub();
-  BRIEFING_DATA.length = 0;
-  BRIEFING_DATA.push(...remoteData);
-
-  // 날짜 내림차순 정렬 (최신이 위)
+  // 데이터가 HTML에 직접 embed되어 있으므로 fetch 불필요
   renderSidebar();
   if (BRIEFING_DATA.length > 0) {
     switchDate(BRIEFING_DATA[0].id);
-    setStatus('', false);
-  } else {
-    // 불러오기 실패해도 조용히 — PDF 업로드하면 됨
-    setStatus('', false);
   }
-
+  setStatus('', false);
   fetchLiveTicker();
   setInterval(fetchLiveTicker, 60000);
 }
