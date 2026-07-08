@@ -1,5 +1,312 @@
 [
   {
+    "id": "d0701",
+    "label": "Jul 1 (Wed)",
+    "dot": "#2ecc8a",
+    "summary": "S&P 500과 나스닥이 2020년 이후 최고 분기 수익률 기록하며 강세 지속, 반도체·AI 주도",
+    "market": [
+      {
+        "label": "NASDAQ",
+        "value": "26213.72",
+        "change": "+1.52%",
+        "up": true
+      },
+      {
+        "label": "S&P 500",
+        "value": "7499.36",
+        "change": "+0.79%",
+        "up": true
+      },
+      {
+        "label": "DOW",
+        "value": "52319.20",
+        "change": "+0.26%",
+        "up": true
+      },
+      {
+        "label": "PHLX Semiconductor",
+        "value": "14246.96",
+        "change": "+3.92%",
+        "up": true
+      }
+    ],
+    "macroIndicators": [
+      {
+        "label": "미10년 국채금리",
+        "value": "4.420%",
+        "change": "-",
+        "up": false,
+        "sub": "성장주 밸류에 압박"
+      },
+      {
+        "label": "VIX 공포지수",
+        "value": "16.45",
+        "change": "-6.80%",
+        "up": true,
+        "sub": "변동성 완화"
+      },
+      {
+        "label": "WTI 유가",
+        "value": "$69.50",
+        "change": "-$1.25",
+        "up": false,
+        "sub": "인플레 완화 신호"
+      },
+      {
+        "label": "달러인덱스(DXY)",
+        "value": "97.53",
+        "change": "+0.04%",
+        "up": false,
+        "sub": "약달러 추세"
+      }
+    ],
+    "koreaMarket": [
+      {
+        "label": "KOSPI",
+        "value": "N/A",
+        "change": "",
+        "up": null
+      },
+      {
+        "label": "KOSDAQ",
+        "value": "N/A",
+        "change": "",
+        "up": null
+      },
+      {
+        "label": "원/달러",
+        "value": "N/A",
+        "change": "",
+        "up": null,
+        "sub": "환율 정보 미제공"
+      },
+      {
+        "label": "외국인 순매수",
+        "value": "N/A",
+        "change": "",
+        "up": null
+      }
+    ],
+    "nasdaq": [
+      {
+        "tag": "AI",
+        "tagColor": "blue",
+        "title": "S&P, Nasdaq Post Best Quarter Since 2020",
+        "meta": "A1면·Market Digest",
+        "summary": "나스닥 지수는 21% 상승으로 분기 최고 성과 기록. 반도체 지수(PHLX)는 88% 상승으로 역대 최고. 마이크론 242%, AMD 186%, 브로드컴 22% 등 AI 관련주 급등.",
+        "implication": "AI 랠리 지속, 나스닥 지수의 집중도 심화, 기술주 리스크 관리 필요",
+        "page": "p. A1-A2 — Markets",
+        "quote": "S&P 500 and Nasdaq powered through a turbulent few months to log their best quarter since 2020, with S&P 500 posting 14.9% gain and Nasdaq 21.4% gain."
+      },
+      {
+        "tag": "Defense",
+        "tagColor": "orange",
+        "title": "JPMorgan Stokes Defense Industry",
+        "meta": "A1면·Business",
+        "summary": "제이피모건 체스(CEO 제이미 다이먼)가 1.5조 달러 국방 산업 투자 계획 발표. 헌츠빌 미사일 공장 방문 후 10년간 1.5조 달러 규모 금융 제공 및 자체 자본 투자(10억 달러) 결정. MP Materials 지분 매입, Shield AI 투자 등.",
+        "implication": "국방 산업 구조적 공급 부족 심화, 방위산업 관련주 강세 지속 가능성",
+        "page": "p. A1, A10 — Business",
+        "quote": "JPMorgan plans to invest $1.5 trillion in national-security sector over next decade, putting own $10 billion capital fund into defense companies."
+      },
+      {
+        "tag": "Politics",
+        "tagColor": "red",
+        "title": "Court Upholds Birthright Citizenship",
+        "meta": "A1면·U.S. News",
+        "summary": "대법원 6-3으로 트럼프의 시민권 박탈 행정명령 기각. 14수정헌법의 시민권 조항이 미국 내 출생자에게 광범위하게 적용된다고 판결. 로버츠 대법관 주심.",
+        "implication": "이민 정책 불확실성 증가, 노동 시장 이민 수급 관련주 영향",
+        "page": "p. A1, A6 — U.S. News",
+        "quote": "Supreme Court struck down Trump's effort to curtail birthright citizenship, ruling 6-3 that 14th Amendment's guarantee of citizenship applies broadly to those born on U.S. soil."
+      },
+      {
+        "tag": "Crypto",
+        "tagColor": "yellow",
+        "title": "Trump Made Over $1 Billion On Crypto Businesses",
+        "meta": "A1면·Business",
+        "summary": "트럼프, 암호화폐 사업으로 10억 달러 초과 수익 기록. 트럼프 멤코인 로열티 6.35억 달러, World Liberty Financial 토큰 판매액 5억 달러 초과. 메타·파라마운트·디즈니와 법적 합의금 8,650만 달러.",
+        "implication": "암호화폐 규제 불확실성, 코인 관련주 변동성 확대",
+        "page": "p. A1 — Business",
+        "quote": "Trump's cryptocurrency ventures delivered windfall of over $1 billion last year, with $635 million from memecoin royalties and $500 million from World Liberty Financial token sales."
+      },
+      {
+        "tag": "Earnings",
+        "tagColor": "green",
+        "title": "Nike Records Sales Decline Amid China Weakness",
+        "meta": "B2면·Business",
+        "summary": "나이키, 4분기 매출 1% 감소로 11.1억 달러 기록. 중국 약세 지속, 콘버스 브랜드 부진. CEO Elliott Hill이 실적 예상치 내로 실행 예상.",
+        "implication": "중국 소비 약화 신호, 소비재주 개별 종목 리스크 관리 필요",
+        "page": "p. B2 — Business",
+        "quote": "Nike recorded another sales decline in the latest quarter as it continued to hit hurdles with weakness in China, fourth-quarter revenue down 1% to $10.97 billion."
+      }
+    ],
+    "korea": [
+      {
+        "tag": "Regulation",
+        "tagColor": "red",
+        "title": "정치 리스크 심화: 법원의 시민권 관련 판결",
+        "meta": "A1면·분석",
+        "summary": "트럼프 행정부의 강경 이민 정책이 법원에 의해 부분 무효화되면서 미 정치 양극화 심화. 이는 향후 정책 추진의 불확실성을 높임.",
+        "implication": "미 정치 불확실성 확대로 정책 부작용, 경기 변동성 증가 위험",
+        "page": "p. A1 — U.S. News",
+        "quote": "Supreme Court rejected Trump's executive order on birthright citizenship with 6-3 ruling, blocking anti-immigration initiative."
+      },
+      {
+        "tag": "Energy",
+        "tagColor": "orange",
+        "title": "러시아 에너지 위기: 유크라이나 드론 공격으로 정유소 피해",
+        "meta": "A9면·World News",
+        "summary": "우크라이나 드론의 러시아 정유소 광범위 타격으로 휘발유 부족. 28% 정제 용량 오프라인, 긴 가솔린 줄, 급유 제한 시작. 푸틴 정부 정치적 압박 증가.",
+        "implication": "유럽 에너지 안보 리스크, 원유 가격 변동성 지속, 유럽 정유주 약세",
+        "page": "p. A9 — World News",
+        "quote": "Russia faces fuel shortages after Ukrainian drone campaign targeting oil refineries brought the war home for ordinary Russians, with 28% of refining capacity offline."
+      },
+      {
+        "tag": "M&A",
+        "tagColor": "blue",
+        "title": "커스트캐스트: NBCUniversal 독립 추진으로 미디어 M&A 가능성",
+        "meta": "B12면·Heard on Street",
+        "summary": "컴캐스트의 NBCUniversal 분사 발표로 미디어 통합 전망. 넷플릭스의 NBCU 인수 가능성 높아, 하지만 주주 반발 우려와 세제 장애물 존재. 스트리밍 시대 전통 번들 모델 약화.",
+        "implication": "미디어 M&A 불확실성, 스트리밍 선도 기업의 구조적 강점 지속",
+        "page": "p. B12 — Heard on the Street",
+        "quote": "Comcast's plan to separate NBCUniversal signals next deal magnet in entertainment consolidation, though Netflix pursuit remains uncertain due to shareholder concerns and tax complications."
+      }
+    ],
+    "risk": {
+      "geoRisks": [
+        {
+          "emoji": "🇮🇷",
+          "label": "Iran-U.S. 협상 교착: 유가 변동성 지속 우려",
+          "level": "high"
+        },
+        {
+          "emoji": "🇷🇺",
+          "label": "Russia 에너지 위기: 유럽 공급망 리스크",
+          "level": "high"
+        },
+        {
+          "emoji": "🇨🇳",
+          "label": "China 경제 약세: 다국적기업 실적 부진 심화",
+          "level": "mid"
+        }
+      ],
+      "bubbleChecks": [
+        {
+          "label": "AI 투자 수익성 미확인: 거대 자본 지출 대비 미미한 수익",
+          "level": "high",
+          "isNew": true
+        },
+        {
+          "label": "반도체 집중도 심화: Mag7에서 칩주 중심으로 쏠림",
+          "level": "high",
+          "isNew": false
+        },
+        {
+          "label": "기술주 밸류에이션: 역사적 수준 대비 고가 지속",
+          "level": "mid",
+          "isNew": false
+        },
+        {
+          "label": "이차 금리 인상 우려: Fed 회장 인플레 우려 신호",
+          "level": "mid",
+          "isNew": true
+        }
+      ]
+    },
+    "sectors": [
+      {
+        "name": "반도체·AI",
+        "value": "+3.92%",
+        "up": true,
+        "barPct": 95
+      },
+      {
+        "name": "에너지",
+        "value": "-1.77%",
+        "up": false,
+        "barPct": 20
+      },
+      {
+        "name": "금융",
+        "value": "-0.79%",
+        "up": false,
+        "barPct": 35
+      },
+      {
+        "name": "헬스케어",
+        "value": "-1.30%",
+        "up": false,
+        "barPct": 30
+      },
+      {
+        "name": "소비재",
+        "value": "-1.25%",
+        "up": false,
+        "barPct": 25
+      },
+      {
+        "name": "통신서비스",
+        "value": "-0.57%",
+        "up": false,
+        "barPct": 40
+      }
+    ],
+    "spotlight": [
+      {
+        "ticker": "NVDA",
+        "desc": "AI 수혜, 분기 +15% 상승",
+        "badge": "+15%",
+        "color": "green"
+      },
+      {
+        "ticker": "MICRON",
+        "desc": "메모리 칩 강세, 분기 +242%",
+        "badge": "+242%",
+        "color": "green"
+      },
+      {
+        "ticker": "AMD",
+        "desc": "프로세서 수요 증가, 분기 +186%",
+        "badge": "+186%",
+        "color": "green"
+      },
+      {
+        "ticker": "NKE",
+        "desc": "중국 약세로 매출 감소, -1%",
+        "badge": "-1%",
+        "color": "red"
+      }
+    ],
+    "macro": [
+      {
+        "date": "6/30",
+        "dateNote": "월",
+        "dot": "#2ecc8a",
+        "title": "Q2 실적 강세: S&P 500 +15%, Nasdaq +21%",
+        "sub": "2020년 이후 최고 분기 성과",
+        "badgeText": "상승장",
+        "badgeColor": "green"
+      },
+      {
+        "date": "6/25",
+        "dateNote": "수",
+        "dot": "#378add",
+        "title": "Fed 회장 인플레 우려: 금리 인상 신호",
+        "sub": "기술주 밸류에 부담",
+        "badgeText": "금리",
+        "badgeColor": "red"
+      },
+      {
+        "date": "7/1",
+        "dateNote": "수",
+        "dot": "#e24b4a",
+        "title": "유가 하락 +경제 불확실성: WTI -$1.25",
+        "sub": "인플레 완화 vs 경기 약화 신호",
+        "badgeText": "에너지",
+        "badgeColor": "blue"
+      }
+    ]
+  },
+  {
     "id": "d0707",
     "label": "Jul 7 (화)",
     "dot": "#2ecc8a",
